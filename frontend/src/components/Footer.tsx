@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* 会社情報 */}
           <div>
-            <h3 className="text-xl font-bold mb-4">ECサイト</h3>
+            <h3 className="text-xl font-bold mb-4">Zevra</h3>
             <p className="text-gray-400">
               お客様に最高のショッピング体験を提供します。
             </p>
@@ -59,7 +59,7 @@ export default function Footer() {
 
         {/* フッター下部（著作権） */}
         <div className="border-t border-gray-700 pt-6 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} ECサイト. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Zevra. All rights reserved.</p>
         </div>
       </div>
     </footer>
