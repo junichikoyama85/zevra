@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 interface CartItem {
   id: number;
@@ -11,19 +11,27 @@ interface CartItem {
 
 export function useCart() {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
+  const [isMounted, setIsMounted] = useState(false);
 
   // ローカルストレージから読み込み
   useEffect(() => {
-    const savedCart = localStorage.getItem('cart');
-    if (savedCart) setCartItems(JSON.parse(savedCart));
+    setIsMounted(true);
+    if (typeof window !== 'undefined') {
+      const savedCart = localStorage.getItem('cart');
+      if (savedCart) setCartItems(JSON.parse(savedCart));
+    }
   }, []);
 
   // ローカルストレージに保存
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cartItems));
-  }, [cartItems]);
+    if (isMounted) { // マウント後にのみ保存
+      localStorage.setItem('cart', JSON.stringify(cartItems));
+      console.log('Saved to localStorage:', cartItems); // デバッグ用
+    }
+  }, [cartItems, isMounted]);
 
   const addItem = (item: Omit<CartItem, 'quantity'>) => {
+    console.log('add');
     setCartItems(prev => {
       const existingItem = prev.find(i => i.id === item.id);
       if (existingItem) {
@@ -50,9 +58,9 @@ export function useCart() {
     (sum, item) => sum + item.price * item.quantity, 0
   );
 
-  const totalItems = cartItems.reduce(
-    (sum, item) => sum + item.quantity, 0
-  );
+  const totalItems = useMemo(() => (
+    cartItems.reduce((sum, item) => sum + item.quantity, 0)
+  ), [cartItems]); // cartItemsが変更されるたびに再計算
 
   return {
     cartItems,

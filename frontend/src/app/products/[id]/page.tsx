@@ -13,6 +13,9 @@ interface Product {
   description: string;
   image: string;
   category: string;
+  code: string; // 追加
+  ingredients: string;
+  content: string;
 }
 
 export default function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
