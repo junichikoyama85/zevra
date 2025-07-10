@@ -3,28 +3,27 @@ import { use, useEffect, useState } from 'react';
 import { FiShoppingCart, FiChevronLeft } from 'react-icons/fi';
 import Image from 'next/image';
 import Link from 'next/link';
-import { AddToCartButton } from '../../../components/AddToCartButton';
-import { useCart } from '../../../../hooks/useCart';
+import { AddToCartButton } from '@/components/AddToCartButton';
+import { useCartContext } from '@/contexts/CartContext'
 
 interface Product {
-  id: string;
+  id: number;
   name: string;
   price: number;
   description: string;
   image: string;
   category: string;
-  code: string; // 追加
+  code: string; 
   ingredients: string;
   content: string;
 }
 
 export default function ProductDetail({ params }: { params: Promise<{ id: string }> }) {
- 
   const { id } = use(params); // paramsをアンラップ
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const { cartItems } = useCart();
+  const { items } = useCartContext();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -43,7 +42,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
     fetchProduct();
   }, [id]); // idを依存配列に
 
-  const inCart = cartItems.some(item => item.id === Number(id));
+  const inCart = items.some(item => item.id === Number(id));
 
   if (loading) {
     return (

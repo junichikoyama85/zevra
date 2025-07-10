@@ -1,5 +1,6 @@
 'use client';
-import { useCart } from '../../hooks/useCart';
+import { useRouter } from 'next/navigation';
+import { useCartContext } from '@/contexts/CartContext';
 
 interface Props {
   product: {
@@ -11,8 +12,8 @@ interface Props {
 }
 
 export function AddToCartButton({ product }: Props) {
-  const { addItem } = useCart();
-
+  const { addItem } = useCartContext();
+  const router = useRouter();
   const handleClick = () => {
     console.log('Adding product:', product); // 追加確認
     addItem({
@@ -21,6 +22,9 @@ export function AddToCartButton({ product }: Props) {
       price: product.price,
       image: product.image
     });
+
+    alert('カートに追加しました');
+    // router.push('/cart');
   };
 
   return (

@@ -1,16 +1,17 @@
 'use client';
 import Link from 'next/link';
-import { FiShoppingCart, FiUser, FiSearch } from 'react-icons/fi';
-import { useCart } from '../../hooks/useCart';
+import { FiShoppingCart, FiUser } from 'react-icons/fi';
+import { useCartContext } from '@/contexts/CartContext';
 
 export default function Header() {
-  const { totalItems } = useCart(); // 自動的にcartItemsの変更を監視
+  const { getTotalQuantity } = useCartContext();
+  const totalItems = getTotalQuantity(); // ← ここが変更トリガー
 
   return (
     <header className="border-b sticky top-0 bg-white z-10">
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link href="/" className="text-xl font-bold">
-          ECサイト
+          Zevra
         </Link>
         <nav className="flex gap-4">
           <Link href="/" className="hover:text-blue-500">
@@ -31,4 +32,4 @@ export default function Header() {
       </div>
     </header>
   );
-} 
+}

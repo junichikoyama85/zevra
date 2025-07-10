@@ -1,24 +1,27 @@
 'use client';
 import { FiTrash2, FiChevronUp, FiChevronDown } from 'react-icons/fi';
-import { useCart } from '../../../hooks/useCart';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useCartContext } from '@/contexts/CartContext';
 
 export default function CartPage() {
   const { 
-    cartItems, 
+    items: cartItems, 
     removeItem, 
     updateQuantity,
-    totalPrice,
-    totalItems
-  } = useCart();
+    getTotalQuantity,
+    getTotalPrice
+  } = useCartContext();
+
+  const totalItems = getTotalQuantity();
+  const totalPrice = getTotalPrice();
 
   if (totalItems === 0) {
     return (
       <div className="max-w-7xl mx-auto px-4 py-8 text-center">
         <h1 className="text-2xl font-bold mb-4">カートは空です</h1>
         <Link 
-          href="/products" 
+          href="/" 
           className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition"
         >
           商品一覧へ
