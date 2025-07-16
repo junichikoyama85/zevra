@@ -1,8 +1,8 @@
-'use client' 
+'use client'
 import Link from 'next/link';
 import HomeHeader from "@/components/HomeHeader";
 import HomeFooter from "@/components/HomeFooter";
-import {useMswReady} from '../../../../hooks/useMswReady';
+import { useMswReady } from '../../../../hooks/useMswReady';
 import { use, useEffect, useState } from 'react';
 
 interface NewsItem {
@@ -15,96 +15,127 @@ interface NewsItem {
     author: string;
 }
 
+// カテゴリごとのスタイルを定義
+const getCategoryStyle = (category: string) => {
+    switch (category) {
+        case 'Zevra':
+            return 'bg-black text-white hover:bg-gray-800';
+        case 'paca!':
+            return 'bg-orange-400 text-white hover:bg-orange-500';
+        default:
+            return 'bg-gray-100 text-gray-800 hover:bg-gray-200';
+    }
+};
+
 export default function NewsDetailPage({ params }: { params: Promise<{ id: string }> }) {
-    const { id } = use(params); // paramsをアンラップ
-    const [newsDetailData, setNewsDetailData] = useState < NewsItem | null > (null);
+    const { id } = use(params);
+    const [newsDetailData, setNewsDetailData] = useState<NewsItem | null>(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
     const isMswReady = useMswReady();
 
     useEffect(() => {
         if (!isMswReady || !id) return;
-        
+
         const fetchNewsDetail = async () => {
+            setIsLoading(true);
+            setError(null);
             try {
                 const response = await fetch(`/api/news/${id}`);
-                if (!response.ok) throw new Error('Failed to fetch');
+                if (!response.ok) throw new Error('ニュースの取得に失敗しました');
                 const data = await response.json();
                 setNewsDetailData(data);
             } catch (error) {
-                console.error('ニュースの取得に失敗しました:', error);
+                console.error('Error fetching news:', error);
+                setError('ニュースの読み込み中にエラーが発生しました');
+            } finally {
+                setIsLoading(false);
             }
         };
 
         fetchNewsDetail();
-    }, [isMswReady, id]); // id を依存配列に追加
+    }, [isMswReady, id]);
+
+    if (isLoading) {
+        return (
+            <div className="max-w-4xl mx-auto p-6 text-center">
+                <p>読み込み中...</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="max-w-4xl mx-auto p-6 text-center text-red-500">
+                <p>{error}</p>
+                <Link href="/top" className="mt-4 inline-block text-blue-600 hover:underline">
+                    トップに戻る
+                </Link>
+            </div>
+        );
+    }
 
     if (!newsDetailData) {
-        return <div className="max-w-4xl mx-auto p-6">Loading...</div>;
+        return (
+            <div className="max-w-4xl mx-auto p-6 text-center">
+                <p>ニュースが見つかりませんでした</p>
+                <Link href="/top" className="mt-4 inline-block text-blue-600 hover:underline">
+                    トップに戻る
+                </Link>
+            </div>
+        );
     }
 
     return (
-        <>
-            <HomeHeader/>
+        <div className='bg-[#f7f6f0]'>
+            <HomeHeader />
             <div className="max-w-4xl mx-auto px-4 py-30">
                 {/* カテゴリタグ */}
-                <span 
-                  className={`
-                    inline-flex items-center justify-center
-                    px-4 py-2 mb-6
-                    text-sm font-medium tracking-wide
-                    rounded-full shadow-sm
-                    transition-all duration-200
-                    ${newsDetailData.category === 'Zevra' 
-                      ? 'bg-black text-white hover:bg-gray-800' 
-                      : newsDetailData.category === 'paca!' 
-                        ? 'bg-orange-400 text-white hover:bg-orange-500'
-                        : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-                    }
-                  `}
+                <span
+                    className={`inline-flex items-center justify-center px-4 py-2 mb-6 text-sm font-medium tracking-wide rounded-full shadow-sm transition-all duration-200 ${getCategoryStyle(newsDetailData.category)}`}
                 >
-                  {newsDetailData.category}
+                    {newsDetailData.category}
                 </span>
 
                 {/* タイトル */}
-                <h1 className="text-3xl md:text-4xl font-bold mb-2 text-gray-900">
-                    {
-                    newsDetailData.title
-                } </h1>
+                <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 font-['Poppins-Bold']">
+                    {newsDetailData.title}
+                </h1>
 
                 {/* メタ情報 */}
                 <div className="flex items-center gap-4 text-gray-500 mb-8">
-                    <span>{
-                        newsDetailData.date
-                    }</span>
-                    {/* <span>•</span> */}
-                    {/* <span>投稿者: {newsDetailData.author}</span> */} </div>
+                    <span>{newsDetailData.date}</span>
+                </div>
 
                 {/* メイン画像 */}
-                <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden">
+                <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-lg">
                     {/* <Image
-            src={newsDetailData.image}
-            alt={newsDetailData.title}
-            fill
-            className="object-cover"
-            priority
-          /> */} </div>
+                        src={newsDetailData.image}
+                        alt={newsDetailData.title}
+                        fill
+                        className="object-cover"
+                        priority
+                    /> */}
+                </div>
 
                 {/* 本文 */}
-                <div className="prose prose-lg max-w-none">
-                    {
-                    newsDetailData.content.split('\n').map((paragraph, i) => (
-                        <p key={i}
-                            className="mb-4 text-gray-700 leading-relaxed">
-                            {
-                            paragraph.trim()
-                        } </p>
-                    ))
-                } </div>
+                <div className="prose prose-lg max-w-none mb-12">
+                    {newsDetailData.content.split('\n').map((paragraph, i) => (
+                        <p key={i} className="mb-6 text-gray-700 leading-relaxed">
+                            {paragraph.trim()}
+                        </p>
+                    ))}
+                </div>
 
-                <Link href="/top" className="mt-12 inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition">
+                {/* トップに戻るリンク */}
+                <Link
+                    href="/top"
+                    className="mt-12 inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition hover:underline"
+                >
                     ← トップに戻る
                 </Link>
             </div>
-            <HomeFooter/>
-        </>
+            <HomeFooter />
+        </div>
     );
 }
