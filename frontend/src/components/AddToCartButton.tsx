@@ -1,5 +1,4 @@
 'use client';
-import { useRouter } from 'next/navigation';
 import { useCartContext } from '@/contexts/CartContext';
 
 interface Props {
@@ -13,7 +12,6 @@ interface Props {
 
 export function AddToCartButton({ product }: Props) {
   const { addItem } = useCartContext();
-  const router = useRouter();
   const handleClick = () => {
     console.log('Adding product:', product); // 追加確認
     addItem({

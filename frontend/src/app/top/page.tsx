@@ -4,7 +4,6 @@ import HomeHeader from "@/components/HomeHeader";
 import HomeFooter from "@/components/HomeFooter";
 import Image from 'next/image';
 import { useState } from 'react';
-import { transform } from 'zod/v4-mini';
 
 const solutions = [
     {
@@ -34,8 +33,7 @@ const solutions = [
 
 export default function TopPage() {
     const [selectedIdx, setSelectedIdx] = useState(0); // 初期値を0に設定
-    const { useRouter } = require('next/navigation');
-    const router = useRouter();
+
     return (
         <>
             <HomeHeader/>
@@ -119,7 +117,7 @@ export default function TopPage() {
                 </div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
                     <p className="text-lg text-black bg-opacity-70 px-4">
-                        The whole "Made in JAPAN" at your fingertips
+                        The whole &quot;Made in JAPAN&quot; at your fingertips
                     </p>
                     <h1 className="text-[8rem] font-extrabold text-black bg-white bg-opacity-80 px-8 font-['Poppins-Bold'] leading-none">
                         paca!
@@ -238,28 +236,19 @@ export default function TopPage() {
                         </div>
 
                         {/* 「詳しく見る」ボタン */}
-                        <div className="relative flex justify-center mt-20 w-full">
-                            <a href="/" className="w-full px-8 py-8 bg-yellow-400 hover:bg-yellow-500 text-white font-semibold shadow transition duration-200 text-center rounded-md"
-                                style={{backgroundColor: "rgb(227,159,0)"}}>
-                                Try Using paca!
-                                <span style={{
-                                    position: 'absolute',
-                                    right: '0',
-                                    bottom: '0',
-                                    pointerEvents: 'none',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    overflow: 'hidden',
-                                    borderRadius: '50%',
-                                    backgroundColor: "#fff"
-                                }}>
-                                    <svg width="30" height="30" viewBox="0 0 28 28" fill="none">
-                                        <path d="M10 14h6M14 10l4 4" stroke="#FBBF24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                                    </svg>
-                                </span>
-                            </a>
+                        <div className="mt-30 text-center w-full">
+                            <Link href="/contact">
+                                <Image
+                                    src="/images/button/try_usingpaca.jpg"
+                                    alt="trypaca_btn"
+                                    width={1920}
+                                    height={100}
+                                    className="w-full h-auto mb-2 rounded-md shadow cursor-pointer"
+                                    priority
+                                />
+                            </Link>
                         </div>
+                       
                     </div>
                 </div>
             </div>
@@ -411,7 +400,7 @@ export default function TopPage() {
                         priority
                     />
                      <p className="text-center text-gray-700 mb-8">
-                        's service is the solution!
+                        &quot;s service is the solution!
                     </p>
                 </div>
 
@@ -639,28 +628,19 @@ export default function TopPage() {
                         ))}
                     </ul>
                     
-
                     <div className="relative flex justify-center mt-15 w-1/2 m-auto">
-                        <a href="/" className="w-full px-8 py-8 bg-yellow-400 hover:bg-yellow-500 text-white font-semibold shadow transition duration-200 text-center rounded-md"
-                            style={{backgroundColor: "rgb(227,159,0)"}}>
-                            Try Using paca!
-                            <span style={{
-                                position: 'absolute',
-                                right: '0',
-                                bottom: '0',
-                                pointerEvents: 'none',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                overflow: 'hidden',
-                                borderRadius: '50%',
-                                backgroundColor: "#fff"
-                            }}>
-                                <svg width="30" height="30" viewBox="0 0 28 28" fill="none">
-                                    <path d="M10 14h6M14 10l4 4" stroke="#FBBF24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
-                                </svg>
-                            </span>
-                        </a>
+                        <div className="mt-30 text-center w-full">
+                                <Link href="/contact">
+                                    <Image
+                                        src="/images/button/try_usingpaca.jpg"
+                                        alt="trypaca_btn"
+                                        width={1920}
+                                        height={100}
+                                        className="w-full h-auto mb-2 rounded-md shadow cursor-pointer"
+                                        priority
+                                    />
+                                </Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -671,7 +651,7 @@ export default function TopPage() {
             <div className="relative  -top-30 w-full  bg-cover bg-top bg-no-repeat">
             <div className="flex justify-between flex-nowrap gap-4 overflow-x-auto">
                 <div className="relative w-[320px] h-[200px] flex-shrink-0 overflow-hidden rounded-xl">
-                    <Image
+                <Image
                     src="/images/img/2163893_s.jpg"
                     alt="2163893_s.jpg"
                     fill
@@ -679,9 +659,8 @@ export default function TopPage() {
                     priority
                     />
                 </div>
-                <div className="relative w-[320px] h-[200px] flex-shrink-0 overflow-hidden rounded-xl mt-15">
-                   
-                       <Image
+                <div className="relative w-[320px] h-[200px] flex-shrink-0 overflow-hidden rounded-xl mt-15">               
+                <Image
                     src="/images/img/C56217F1-4A79-4B70-BDD7-1F73CC07801D.JPG"
                     alt="C56217F1-4A79-4B70-BDD7-1F73CC07801D.JPG"
                     fill
@@ -690,8 +669,7 @@ export default function TopPage() {
                     />
                 </div>
                 <div className="relative w-[320px] h-[200px] flex-shrink-0 overflow-hidden rounded-md">
-                
-                           <Image
+                <Image
                     src="/images/img/ECE7F520-1BF3-4004-BA9C-5100D4008760.JPG"
                     alt="ECE7F520-1BF3-4004-BA9C-5100D4008760.JPG"
                     fill
@@ -748,14 +726,18 @@ export default function TopPage() {
                         priority/>
                     - - - - - -
 
-                    <button
-                    type="button"
-                    className="w-1/3 px-8 py-8 bg-black mt-15 hover:bg-yellow-500 text-white font-semibold shadow transition duration-200 text-center rounded-md"
-                    onClick={() => {
-                        router.push('/');
-                    }}>
-                    contact
-                </button>
+                    <div className="flex justify-center mt-15">
+                        <Link href="/contact">
+                        <Image
+                            src="/images/button/contact.png"
+                            alt="contact_btn"
+                            width={640}
+                            height={50}
+                            className="mx-auto mb-2 rounded-md shadow cursor-pointer"
+                            priority
+                        />
+                        </Link>
+                    </div>
                 </div>
 
                 <div className="absolute z-20 w-[45%] h-[45%] flex items-end justify-start pointer-events-none"

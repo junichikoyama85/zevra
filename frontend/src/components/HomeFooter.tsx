@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export default function HomeFooter() {
   return (
@@ -46,7 +45,7 @@ export default function HomeFooter() {
             </div>
 
             <div className="mt-8">
-                <p className="text-2xl text-black/80 font-['Poppins-Bold']">
+                <p className="text-2xl font-['Poppins-Bold']" style={{ color: 'rgb(70,69,66)' }}>
                   Zevra, Inc.
                 </p>
 
@@ -63,14 +62,29 @@ export default function HomeFooter() {
           <div className="max-w-md mx-auto grid grid-cols-1 sm:grid-cols-2 gap-8">
             {/* メニュー */}
             <div>
-              <ul className="space-y-4">
-                {['TOP', 'ABOUT US', 'NEWS', 'CONTACT'].map((item) => (
-                  <li key={item}>
-                    <Link href="#" className="text-lg text-black hover:text-yellow-500 transition flex items-center font-['Poppins-Bold']">
-                      {item}
+              <ul className="space-y-4" >
+                {/* {['TOP', 'ABOUT US', 'NEWS', 'CONTACT'].map((item) => ( */}
+                  <li  style={{ color: 'rgb(70,69,66)' }}>
+                    <Link href="/top" className="text-2xl  hover:text-yellow-500 transition flex items-center font-['Poppins-Bold']">
+                        TOP
                     </Link>
                   </li>
-                ))}
+                  <li  style={{ color: 'rgb(70,69,66)' }}>
+                    <Link href="/about" className="text-2xl  hover:text-yellow-500 transition flex items-center font-['Poppins-Bold']">
+                        ABOUT US
+                    </Link>
+                  </li>
+                  <li  style={{ color: 'rgb(70,69,66)' }}>
+                    <Link href="/about#news" className="text-2xl  hover:text-yellow-500 transition flex items-center font-['Poppins-Bold']">
+                        NEWS
+                    </Link>
+                  </li>
+                  <li  style={{ color: 'rgb(70,69,66)' }}>
+                    <Link href="/about#contact" className="text-2xl  hover:text-yellow-500 transition flex items-center font-['Poppins-Bold']">
+                        CONTACT
+                    </Link>
+                  </li>
+                {/* ))} */}
               </ul>
             </div>
 
@@ -96,9 +110,16 @@ export default function HomeFooter() {
 
           {/* ボタン (右側下部) */}
           <div className="mt-12 text-center w-full">
-            <button className="w-1/2 py-4 bg-yellow-400 text-white text-xl font-bold rounded-md hover:bg-yellow-500 transition shadow-lg">
-              TRY paca! →
-            </button>
+              <Link href="/contact">
+                <Image
+                  src="/images/button/try_paca.jpg"
+                  alt="trypaca_btn"
+                  width={ 350}
+                  height={100}
+                  className="mx-auto mb-2 rounded-md shadow cursor-pointer"
+                  priority
+                />
+              </Link>
           </div>
         </div>
       </div>

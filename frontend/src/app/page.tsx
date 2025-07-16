@@ -4,6 +4,7 @@ import { useMswReady } from '../../hooks/useMswReady';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiSearch, FiX } from 'react-icons/fi';
+import Header from '@/components/Header';
 
 interface Product {
   id: number;
@@ -51,7 +52,6 @@ export default function Home() {
     e.preventDefault();
     if (searchQuery.trim()) {
       setIsSearchActive(true);
-      filteredProducts
     }
   };
 
@@ -70,7 +70,9 @@ export default function Home() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <>
+      <Header />
+       <div className="max-w-7xl mx-auto px-4 py-8">
       {/* 検索フォーム */}
       <div className="flex justify-center mb-8">
         <form onSubmit={handleSearch} className="w-full max-w-2xl">
@@ -157,5 +159,7 @@ export default function Home() {
         ) : null}
       </div>
     </div>
+    </>
+ 
   );
 }

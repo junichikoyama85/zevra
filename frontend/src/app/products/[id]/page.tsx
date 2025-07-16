@@ -4,6 +4,7 @@ import { FiShoppingCart, FiChevronLeft } from 'react-icons/fi';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AddToCartButton } from '@/components/AddToCartButton';
+import Header  from '@/components/Header';
 import { useCartContext } from '@/contexts/CartContext'
 
 interface Product {
@@ -31,6 +32,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
         const res = await fetch(`/api/products/${id}`); // アンラップしたidを使用
         if (!res.ok) throw new Error('商品が見つかりません');
         const data = await res.json();
+        console.log(data)
         setProduct(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'エラーが発生しました');
@@ -68,7 +70,9 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
   if (!product) return null;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <>
+      <Header />
+      <div className="max-w-7xl mx-auto px-4 py-8">
       <Link href="/" className="flex items-center text-blue-500 mb-4">
         <FiChevronLeft className="mr-1" />
         商品一覧に戻る
@@ -79,7 +83,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
         {/* 商品画像 */}
         <div className="bg-gray-100 rounded-lg overflow-hidden aspect-square relative">
           <Image
-            src={product.image}
+            src={`/images${product.image}`}
             alt={product.name}
             fill
             className="object-cover"
@@ -142,5 +146,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
         </div>
       </div>
     </div>
+    </>
+
   );
 }

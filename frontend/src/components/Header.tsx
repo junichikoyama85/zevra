@@ -11,7 +11,7 @@ export default function Header() {
     <header className="border-b sticky top-0 bg-white z-10">
       <div className="container mx-auto flex justify-between items-center p-4">
         <Link href="/" className="text-xl font-bold">
-          Zevra
+        paca!
         </Link>
         <nav className="flex gap-4">
           <Link href="/" className="hover:text-blue-500">

@@ -1,8 +1,6 @@
 import type {Metadata}
 from "next";
 import "./globals.css";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import {CartProvider} from '@/contexts/CartContext';
 
 export const metadata: Metadata = {
