@@ -83,7 +83,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
         {/* 商品画像 */}
         <div className="bg-gray-100 rounded-lg overflow-hidden aspect-square relative">
           <Image
-            src={`/images${product.image}`}
+            src={`${product.image}`}
             alt={product.name}
             fill
             className="object-cover"

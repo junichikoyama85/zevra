@@ -121,7 +121,7 @@ export default function NewsDetailPage({ params }: { params: Promise<{ id: strin
                 {/* メイン画像 */}
                 <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-lg">
                     <Image
-                        src={'/images/img/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg'}
+                        src={'/images/about/about_us_top_pc.png'}
                         alt={newsDetailData.title}
                         fill
                         className="object-cover"
