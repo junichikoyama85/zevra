@@ -1,12 +1,18 @@
 'use client';
 import Link from 'next/link';
-
+import Image from 'next/image';
 export default function HomeHeader() {
   return (
     <header className="fixed top-0 w-full z-999 bg-transparent">
       <div className="w-[90%] mx-auto flex justify-between items-center py-4">
-        <Link href="/top" className="text-5xl font-extrabold text-black font-['Poppins-Bold'] tracking-tight">
-          paca!
+        <Link href="/" className="relative w-40 h-20 flex items-center justify-center">
+          <Image
+            src="/images/text_title/tittle_paca_mv_X2.png"
+            alt="paca! メインタイトル"
+            fill
+            className="object-contain"
+            priority
+          />
         </Link>
         <nav className="flex items-center gap-6">
           <Link href="/about" className="hover:text-blue-500 transition text-black font-['Poppins-Bold']">
@@ -19,7 +25,7 @@ export default function HomeHeader() {
             CONTACT
           </Link>
           <Link
-            href="/"
+            href="/top"
             className="bg-black text-white px-4 py-2 rounded-full hover:bg-gray-200 transition font-['Poppins-Bold'] "
           >
             TRY paca!

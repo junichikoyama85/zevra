@@ -14,6 +14,8 @@ type News = {
   date: string;
 };
 
+
+
 export default function AboutPage() {
   const [newsData, setNewsData] = useState<News[]>([]);
   const isMswReady = useMswReady();
@@ -193,7 +195,7 @@ export default function AboutPage() {
             {/* タイトルエリア */}
             <div className="flex flex-col items-center mb-10">
             <p className="text-base tracking-widest text-gray-500 mb-2">Please feel free to contact us!</p>
-            <Image src="/images/text_title/tittle_1.png" alt="title_1"
+            <Image src="/images/text_title/tittle_1_X4.png" alt="title_1"
                 width={320}
                 height={110}
                 className="mx-auto mb-2"

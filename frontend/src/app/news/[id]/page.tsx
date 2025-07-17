@@ -4,6 +4,7 @@ import HomeHeader from "@/components/HomeHeader";
 import HomeFooter from "@/components/HomeFooter";
 import { useMswReady } from '../../../../hooks/useMswReady';
 import { use, useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface NewsItem {
     id: string;
@@ -87,45 +88,48 @@ export default function NewsDetailPage({ params }: { params: Promise<{ id: strin
     }
 
     return (
-        <div className='bg-[#f7f6f0]'>
+        <div className=''>
             <HomeHeader />
             <div className="max-w-4xl mx-auto px-4 py-30">
-                {/* カテゴリタグ */}
-                <span
-                    className={`inline-flex items-center justify-center px-4 py-2 mb-6 text-sm font-medium tracking-wide rounded-full shadow-sm transition-all duration-200 ${getCategoryStyle(newsDetailData.category)}`}
-                >
-                    {newsDetailData.category}
-                </span>
-
-                {/* タイトル */}
-                <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 font-['Poppins-Bold']">
+                      {/* タイトル */}
+                      <h1 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 font-['Poppins-Bold']">
                     {newsDetailData.title}
                 </h1>
 
-                {/* メタ情報 */}
-                <div className="flex items-center gap-4 text-gray-500 mb-8">
-                    <span>{newsDetailData.date}</span>
-                </div>
-
-                {/* メイン画像 */}
-                <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-lg">
-                    {/* <Image
-                        src={newsDetailData.image}
-                        alt={newsDetailData.title}
-                        fill
-                        className="object-cover"
-                        priority
-                    /> */}
-                </div>
-
-                {/* 本文 */}
-                <div className="prose prose-lg max-w-none mb-12">
+                                {/* 本文 */}
+                                <div className="prose prose-lg max-w-none mb-12">
                     {newsDetailData.content.split('\n').map((paragraph, i) => (
                         <p key={i} className="mb-6 text-gray-700 leading-relaxed">
                             {paragraph.trim()}
                         </p>
                     ))}
                 </div>
+
+                {/* メタ情報 */}
+                <div className="flex items-center gap-4 text-gray-500 mb-8">
+                    <span>{newsDetailData.date}</span>
+                    <span>INFOMATION</span>
+                </div>
+
+                                {/* カテゴリタグ */}
+                                <span
+                    className={`inline-flex items-center justify-center px-4 py-2 mb-6 text-sm font-medium tracking-wide rounded-full shadow-sm transition-all duration-200 ${getCategoryStyle(newsDetailData.category)}`}
+                >
+                    {newsDetailData.category}
+                </span>
+
+                {/* メイン画像 */}
+                <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-lg">
+                    <Image
+                        src={'/images/img/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg'}
+                        alt={newsDetailData.title}
+                        fill
+                        className="object-cover"
+                        priority
+                    />
+                </div>
+
+
 
                 {/* トップに戻るリンク */}
                 <Link

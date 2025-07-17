@@ -65,7 +65,7 @@ export default function HomeFooter() {
               <ul className="space-y-4" >
                 {/* {['TOP', 'ABOUT US', 'NEWS', 'CONTACT'].map((item) => ( */}
                   <li  style={{ color: 'rgb(70,69,66)' }}>
-                    <Link href="/top" className="text-2xl  hover:text-yellow-500 transition flex items-center font-['Poppins-Bold']">
+                    <Link href="/" className="text-2xl  hover:text-yellow-500 transition flex items-center font-['Poppins-Bold']">
                         TOP
                     </Link>
                   </li>
@@ -110,7 +110,7 @@ export default function HomeFooter() {
 
           {/* ボタン (右側下部) */}
           <div className="mt-12 text-center w-full">
-              <Link href="/contact">
+              <Link href="/top">
                 <Image
                   src="/images/button/try_paca.jpg"
                   alt="trypaca_btn"
