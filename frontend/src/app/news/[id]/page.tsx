@@ -129,15 +129,37 @@ export default function NewsDetailPage({ params }: { params: Promise<{ id: strin
                     />
                 </div>
 
+                <div className="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-lg">
+                    
+                </div>
 
+                <div className="relative w-full py-25">
+                    <div className="flex flex-col items-center">
+                    <p className="text-base tracking-widest text-gray-500 mb-2">Introducing a selection of famous Japanese products</p>
+                    <Image src="/images/text_title/tittle_4_X4.png" alt="title_1"
+                        width={320}
+                        height={110}
+                        className="mx-auto mb-2"
+                        priority/>
+                    - - - - - -
+                    <div className="flex justify-center mt-15">
+                        <Link href="/">
+                        <Image
+                            src="/images/button/contact.png"
+                            alt="contact_btn"
+                            width={640}
+                            height={50}
+                            className="mx-auto mb-2 rounded-md shadow cursor-pointer"
+                            priority
+                        />
+                        </Link>
+                    </div>
+                </div>
 
-                {/* トップに戻るリンク */}
-                <Link
-                    href="/top"
-                    className="mt-12 inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition hover:underline"
-                >
-                    ← トップに戻る
-                </Link>
+    
+
+            </div>
+            
             </div>
             <HomeFooter />
         </div>

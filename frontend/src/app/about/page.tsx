@@ -41,7 +41,7 @@ export default function AboutPage() {
         {/* ヒーローセクション */}
         <div className="relative h-[70vh]">
           <Image
-            src="/images/img/alesia-kazantceva-VWcPlbHglYc-unsplash.jpg"
+            src="/images/about/about_us_top_pc.png"
             alt="About Us"
             fill
             className="object-cover object-bottom"

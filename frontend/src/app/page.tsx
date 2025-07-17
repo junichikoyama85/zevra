@@ -7,19 +7,19 @@ import { useState } from 'react';
 
 const solutions = [
     {
-      image: "/images/solution/6FB3A88B-6860-4C6C-AB15-F9377F3D2457.JPG",
+      image: "/images/solution/solution_1.png",
       alt: "全国各地の特産品",
       title: "Simple, effortless, and stress-free",
       description:[ "Planning a trip takes time—flights, hotels, itineraries... It can be overwhelming." ,"With paca!, there’s no hassle. Our smart ordering system and AI concierge make the experience smooth and easy—just relax and enjoy."]
     },
     {
-      image: "/images/solution/21F3260B-5B2B-46AF-B6F7-784B173B8D4D.JPG",
+      image: "/images/solution/solution_2.png",
       alt: "地域限定の逸品",
       title: "Experience regional specialties from all over Japan, delivered to your door",
       description: ["We bring you local products that are usually only available in specific regions.","Stay comfortably at your accommodation while discovering the flavors of Japan—no need to travel far and wide."]
     },
     {
-      image: "/images/solution/32440932_s.jpg",
+      image: "/images/solution/solution_3.png",
       alt: "新しい発見",
       title: "Discover Japanese products that truly match your taste",
       description: ["Japan’s food and drink culture is rich and unique—but trying everything to find your favorites? That’s nearly impossible.","Our AI agent learns your preferences and helps you discover local specialties tailored to your taste."]
@@ -655,45 +655,45 @@ export default function TopPage() {
             {/* =============================================
             pictures
             ============================================= */}
-            <div className="relative  -top-30 w-full  bg-cover bg-top bg-no-repeat">
-            <div className="flex justify-between flex-nowrap gap-4 overflow-x-auto">
-                <div className="relative w-[320px] h-[200px] flex-shrink-0 overflow-hidden rounded-xl">
-                <Image
-                    src="/images/img/2163893_s.jpg"
-                    alt="2163893_s.jpg"
-                    fill
-                    className="object-cover rounded-xl"
-                    priority
-                    />
+            <div className="relative -top-30 w-full bg-cover bg-top bg-no-repeat">
+                <div className="flex flex-nowrap gap-4 w-full">
+                    <div className="relative flex-1 h-[300px] overflow-hidden rounded-xl">
+                        <Image
+                            src="/images/lotation/lotation_01.png"
+                            alt="2163893_s.jpg"
+                            fill
+                            className="object-cover rounded-xl"
+                            priority
+                        />
+                    </div>
+                    <div className="relative flex-1 h-[300px] overflow-hidden rounded-xl mt-15">
+                        <Image
+                            src="/images/lotation/lotation_02.png"
+                            alt="C56217F1-4A79-4B70-BDD7-1F73CC07801D.JPG"
+                            fill
+                            className="object-cover rounded-xl"
+                            priority
+                        />
+                    </div>
+                    <div className="relative flex-1 h-[300px] overflow-hidden rounded-xl">
+                        <Image
+                            src="/images/lotation/lotation_03.png"
+                            alt="ECE7F520-1BF3-4004-BA9C-5100D4008760.JPG"
+                            fill
+                            className="object-cover rounded-xl"
+                            priority
+                        />
+                    </div>
+                    <div className="relative flex-1 h-[300px] overflow-hidden rounded-xl mt-15">
+                        <Image
+                            src="/images/lotation/lotation_04.png"
+                            alt="26801163_s.jpg"
+                            fill
+                            className="object-cover rounded-xl"
+                            priority
+                        />
+                    </div>
                 </div>
-                <div className="relative w-[320px] h-[200px] flex-shrink-0 overflow-hidden rounded-xl mt-15">               
-                <Image
-                    src="/images/img/C56217F1-4A79-4B70-BDD7-1F73CC07801D.JPG"
-                    alt="C56217F1-4A79-4B70-BDD7-1F73CC07801D.JPG"
-                    fill
-                    className="object-cover"
-                    priority
-                    />
-                </div>
-                <div className="relative w-[320px] h-[200px] flex-shrink-0 overflow-hidden rounded-md">
-                <Image
-                    src="/images/img/ECE7F520-1BF3-4004-BA9C-5100D4008760.JPG"
-                    alt="ECE7F520-1BF3-4004-BA9C-5100D4008760.JPG"
-                    fill
-                    className="object-cover rounded-xl"
-                    priority
-                    />
-                </div>
-                <div className="relative w-[320px] h-[200px] flex-shrink-0 overflow-hidden rounded-xl mt-15">
-                <Image
-                    src="/images/img/26801163_s.jpg"
-                    alt="26801163_s.jpg"
-                    fill
-                    className="object-cover rounded-xl"
-                    priority
-                    />
-                </div>
-            </div>
             </div>
 
             {/* =============================================
@@ -725,8 +725,8 @@ export default function TopPage() {
             ============================================= */}
             <div className="relative w-full py-25 " style={{ backgroundColor: 'rgb(229, 229, 228)' }}>
                 <div className="flex flex-col items-center">
-                    <p className="text-base tracking-widest text-gray-500 mb-2">Introducing a selection of famous Japanese products</p>
-                    <Image src="/images/text_title/tittle_4.png" alt="title_1"
+                    <p className="text-base tracking-widest text-gray-500 mb-2">Please feel to contact us!</p>
+                    <Image src="/images/text_title/tittle_4_X4.png" alt="tittle_4"
                         width={320}
                         height={110}
                         className="mx-auto mb-2"
