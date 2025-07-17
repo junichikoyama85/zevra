@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { FiShoppingCart, FiUser } from 'react-icons/fi';
 import { useCartContext } from '@/contexts/CartContext';
+import Image from 'next/image';
 
 export default function Header() {
   const { getTotalQuantity } = useCartContext();
@@ -10,8 +11,14 @@ export default function Header() {
   return (
     <header className="fixed top-0 w-full z-999 bg-transparent">
       <div className="w-[90%] mx-auto flex justify-between items-center py-4">
-        <Link href="/top" className="text-5xl font-extrabold text-black font-['Poppins-Bold'] tracking-tight">
-          paca!
+      <Link href="/" className="relative w-40 h-20 flex items-center justify-center">
+          <Image
+            src="/images/text_title/tittle_paca_mv_X2.png"
+            alt="paca! メインタイトル"
+            fill
+            className="object-contain"
+            priority
+          />
         </Link>
         <nav className="flex items-center gap-8">
           <Link href="/" className="hover:text-orange-500 transition text-black text-2xl font-['Poppins-Bold']">

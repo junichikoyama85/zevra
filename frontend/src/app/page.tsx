@@ -40,9 +40,9 @@ export default function TopPage() {
             {/* =============================================
             main
             ============================================= */}
-            <div className="relative w-full h-screen">
+            <div className="relative w-full h-screen" style={{backgroundColor:"#f8f7f1"}}>
                 <Image src="/images/main_visual/back_mv.png" alt="back_mv" fill className="object-cover" priority/>
-                <div className="absolute left-1/2 top-1/2 transform -translate-y-1/2 translate-x-[220px] z-10 w-[18%] h-1/3 flex items-center justify-start pointer-events-none">
+                <div className="absolute right-[15%] top-1/2 transform -translate-y-1/2  z-10 w-[17%] h-1/2 flex items-center justify-start pointer-events-none">
                     <Image src="/images/main_visual/_paca_mv_1.png" alt="_paca_mv_1" fill className="object-contain" priority/>
                 </div>
                 <div className="absolute left-1/2 z-10 w-[18%] h-1/3 flex items-start justify-center pointer-events-none"
@@ -53,17 +53,17 @@ export default function TopPage() {
                     }}>
                     <Image src="/images/main_visual/_paca_mv_2.png" alt="_paca_mv_2" fill className="object-contain" priority/>
                 </div>
-                <div className="absolute z-10 w-[18%] h-1/3 flex items-start justify-end pointer-events-none"
+                <div className="absolute z-10 w-[30%] h-1/2 flex items-start justify-end pointer-events-none"
                     style={{
-                        top: '28%',
-                        left: '20%'
+                        top: '15%',
+                        left: '7%'
                     }}>
                     <Image src="/images/main_visual/_paca_mv_3.png" alt="_paca_mv_3" fill className="object-contain" priority/>
                 </div>
                 <div className="absolute z-10 w-[18%] h-1/3 flex items-start justify-end pointer-events-none"
                     style={{
-                        top: '20%',
-                        left: '10%',
+                        top: '15%',
+                        left: '5%',
                         transform: 'rotate(-10deg)'
                     }}>
                     <Image src="/images/main_visual/sousyoku_3.png" alt="sousyoku_3.png" fill className="object-contain" priority/>
@@ -86,22 +86,22 @@ export default function TopPage() {
                 </div>
                 <div className="absolute z-20 w-[10%] h-[13%] flex items-center justify-center pointer-events-none"
                     style={{
-                        top: '18%',
-                        left: '35%'
+                        top: '10%',
+                        left: '30%'
                     }}>
                     <Image src="/images/main_visual/sennsu.png" alt="扇子" fill className="object-contain" priority/>
                 </div>
                 <div className="absolute z-20 w-[10%] h-[13%] flex items-center justify-center pointer-events-none"
                     style={{
-                        top: '25%',
-                        left: '43%',
+                        top: '15%',
+                        left: '38%',
                         transform: 'rotate(20deg)'
                     }}>
                     <Image src="/images/main_visual/daruma.png" alt="達磨" fill className="object-contain" priority/>
                 </div>
                 <div className="absolute z-20 w-[18%] h-[20%] flex items-center justify-center pointer-events-none"
                     style={{
-                        top: '20%',
+                        top: '10%',
                         left: '52%',
                         transform: 'rotate(0deg)'
                     }}>
@@ -115,11 +115,11 @@ export default function TopPage() {
                     }}>
                     <Image src="/images/main_visual/sousyoku_4.png" alt="sousyoku_4" fill className="object-contain" priority/>
                 </div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-                    <p className="text-lg text-black bg-opacity-70 px-4">
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-10 ">
+                    <p className="text-lg text-black bg-opacity-70 px-4 font-['Poppins-SemiBold']" style={{fontSize: "17pt"}}>
                         The whole &quot;Made in JAPAN&quot; at your fingertips
                     </p>
-                    <div className="relative w-[32rem] h-[10rem] flex items-center justify-center bg-white bg-opacity-80 font-['Poppins-Bold']">
+                    <div className="relative w-[33rem] h-[15rem] flex items-center justify-center">
                         <Image
                             src="/images/text_title/tittle_paca_mv_X2.png"
                             alt="paca! メインタイトル"
@@ -144,10 +144,10 @@ export default function TopPage() {
                     }}>
                     <Image src="/images/main_visual/kani.png" alt="蟹" fill className="object-contain" priority/>
                 </div>
-                <div className="absolute z-20 w-[25%] h-[33%] flex items-end justify-start pointer-events-none"
+                <div className="absolute z-20 w-[10%] h-[40%] flex items-end justify-start pointer-events-none"
                     style={{
                         top: '40%',
-                        left: '70%',
+                        right: '10%',
                         transform: 'rotate(0deg)'
                     }}>
                     <Image src="/images/main_visual/sousyoku_1.png" alt="装飾1" fill className="object-contain" priority/>
@@ -155,15 +155,16 @@ export default function TopPage() {
             </div>
 
             {/* =============================================
-            service
+            ourr service
+            WHAT IS PACA!
             ============================================= */}
             <div className="py-24 bg-[#f7f6f0] relative z-10">
                 <div className="container mx-auto flex flex-col items-center">
                     {/* タイトルエリア */}
                     <div className="flex flex-col items-center mb-10">
-                        <p className="text-base tracking-widest text-gray-500 mb-2">OUR SERVICES</p>
+                        <p className="text-base tracking-widest text-gray-500 mb-2 font-['Poppins-Medium']" style={{color: "#252525" ,fontSize: "18pt" }}>OUR SERVICES</p>
                         <Image src="/images/text_title/tittle_1_X4.png" alt="tittle_1_X4"
-                            width={320}
+                            width={400}
                             height={110}
                             className="mx-auto mb-2"
                             priority/>
@@ -172,11 +173,11 @@ export default function TopPage() {
 
                     {/* サービス説明エリア */}
                     <div className="max-w-2xl text-center mx-auto">
-                        <h2 className="text-1xl md:text-3xl font-bold mb-6 text-gray-800 leading-relaxed">
+                        <h2 className="text-1xl md:text-3xl font-bold mb-6 text-gray-800 leading-relaxed  font-['Poppins-SemiBold']" style={{color:"#252525", fontSize: "25px"}}>
                             A More Meaningful Way to Experience Japan
                         </h2>
                         <div className="text-left">
-                            <div className="space-y-8 my-10">
+                            <div className="space-y-8 my-10  font-['Poppins-Medium']" style={{fontSize:"18pt", color:"#454545"}}>
                                 <p className="text-base md:text-lg text-gray-700 leading-loose whitespace-pre-line">
                                     paca! is a service designed to make your stay in Japan even more special.
                                 </p>
@@ -194,10 +195,10 @@ export default function TopPage() {
                                 </p>
                             </div>
                         </div>
-                        <div className="absolute z-20 w-[25%] h-[33%] flex items-end justify-start pointer-events-none"
+                        <div className="absolute z-20 flex items-end justify-start pointer-events-none"
                             style={{
-                                top: '7%',
-                                right: '0%',
+                                top: '12%',
+                                right: '5%',
                                 transform: 'translate(-50%, -50%)'
                             }}>
                             <Image src="/images/about/sousyoku_5.png" alt="装飾5"
@@ -205,10 +206,10 @@ export default function TopPage() {
                                 height={60}
                                 priority/>
                         </div>
-                        <div className="absolute z-20 w-[35%] h-[45%] flex items-end justify-start pointer-events-none"
+                        <div className="absolute z-20  flex items-end justify-start pointer-events-none"
                             style={{
-                                top: '10%',
-                                left: '0%'
+                                top: '20%',
+                                left: '10%'
                             }}>
                             <Image src="/images/about/sousyoku_7.png" alt="装飾5"
                                 width={200}
@@ -216,10 +217,10 @@ export default function TopPage() {
                                 className="mx-auto mb-2"
                                 priority/>
                         </div>
-                        <div className="absolute z-20 w-[25%] h-[30%] flex items-end justify-start pointer-events-none"
+                        <div className="absolute z-20 flex items-end justify-start pointer-events-none"
                             style={{
-                                bottom: '5%',
-                                right: '3%',
+                                bottom: '30%',
+                                right: '15%',
                                 transform: 'rotate(200deg)'
                             }}>
                             <Image src="/images/about/sousyoku_6.png" alt="装飾6"
@@ -244,14 +245,16 @@ export default function TopPage() {
                         {/* 「詳しく見る」ボタン */}
                         <div className="mt-30 text-center w-full">
                             <Link href="/">
-                                <Image
-                                    src="/images/button/try_usingpaca.jpg"
-                                    alt="trypaca_btn"
-                                    width={1920}
-                                    height={100}
-                                    className="w-full h-auto mb-2 rounded-md shadow cursor-pointer"
-                                    priority
-                                />
+                                <button
+                                    className="relative w-[750px] h-[125px] bg-black text-white rounded-xl text-3xl font-['Poppins-SemiBold'] flex items-center justify-center mx-auto shadow-lg transition hover:bg-gray-800"
+                                    style={{
+                                        backgroundColor: '#e59d00',
+                                        fontSize: '22pt',
+                                        borderRadius: '10px' // さらに角を強調
+                                    }}
+                                >
+                                    Try Using paca!
+                                </button>
                             </Link>
                         </div>
                        
@@ -260,7 +263,8 @@ export default function TopPage() {
             </div>
 
             {/* =============================================
-            problem
+            Do you have any of the following problems?
+            SITUATIONS
             ============================================= */}
             <div className="relative w-full min-h-[400px] bg-[#f7f6f0] bg-cover bg-top bg-no-repeat pb-30"
                 style={{
@@ -269,14 +273,14 @@ export default function TopPage() {
                 <div className="container mx-auto pt-80 px-4">
                     {/* タイトルエリア */}
                     <div className="text-center mb-16">
-                        <p className="text-base tracking-widest text-gray-500 mb-2">
+                        <p className="text-base tracking-widest text-gray-500 mb-2 font-['Poppins-Medium']" style={{fontSize:"18pt", color:"#454545"}}>
                             Do you have any of the following problems?
                         </p>
                         <Image 
                             src="/images/text_title/tittle_2_X4.png" 
                             alt="tittle_2_X4"
-                            width={320}
-                            height={110}
+                            width={450}
+                            height={150}
                             className="mx-auto mb-4"
                             priority
                         />
@@ -284,110 +288,115 @@ export default function TopPage() {
                     </div>
 
                     {/* ケーススタディ */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                        {[
-                            {
-                                title: "CASE - 01",
-                                text: `"Third time in Japan. Sushi? Check. Kimono? Done. Now I wanna see the real Japan—like the kind only locals know."`,
-                                image: "/images/problem/nayami_01.png"
-                            },
-                            {
-                                title: "CASE - 02",
-                                text: `"Was dying to do a sake/shochu/whisky tasting in Japan... Didn't know they're made in totally different regions!"`,
-                                image: "/images/problem/nayami_02.png",
-                                bubbleType: Math.floor(Math.random() * 4)
-                            },
-                            {
-                                title: "CASE - 03",
-                                text: `"Every time I see the Ramen store there's a huge line... But wait—Hotel + the Ramen at my time, no line, no problem!?"`,
-                                image: "/images/problem/nayami_03.png",
-                                bubbleType: Math.floor(Math.random() * 4)
-                            }
-                        ].map((caseItem, index) => {
-                            // 不規則な形状パターンを手動定義（インデックスごとに異なる形状）
-                            const bubbleShapes = [
-                                { // タイプ1: すべての角を大きく丸く
-                                    borderTopLeftRadius: "120px",
-                                    borderTopRightRadius: "80px",
-                                    borderBottomRightRadius: "100px",
-                                    borderBottomLeftRadius: "80px",
-                                    border: "1px solid #f0f0f0"
-                                },
-                                { // タイプ2: 右側と左側の角を大きく丸く
-                                    borderTopLeftRadius: "80px",
-                                    borderTopRightRadius: "100px",
-                                    borderBottomRightRadius: "100px",
-                                    borderBottomLeftRadius: "90px",
-                                    border: "none"
-                                },
-                                { // タイプ3: 不規則な波型を維持しつつ、角を大きく丸く
-                                    borderTopLeftRadius: "80px",
-                                    borderTopRightRadius: "100px",
-                                    borderBottomRightRadius: "60px",
-                                    borderBottomLeftRadius: "120px",
-                                    border: "1px solid #f0f0f0"
-                                }
-                            ];
-
-                            // ケース番号に応じて形状を選択（3パターン循環）
-                            const bubbleStyle = bubbleShapes[index % bubbleShapes.length];
-
-                            return (
-                                <div key={index} className="p-6 flex flex-col items-center">
-                                    <div className="relative flex flex-col items-center w-full my-12">
-                                        {/* タイトル */}
-                                        <h3 className="absolute z-10 text-lg font-bold text-white mb-3 rounded-full px-5 py-1 left-1/2 -top-5 -translate-x-1/2 whitespace-nowrap"
-                                            style={{ backgroundColor: "rgb(227,159,0)" }}>
-                                            {caseItem.title}
-                                        </h3>
-
-                                        {/* 不規則形状の吹き出し */}
-                                        <div 
-                                            className="relative bg-white px-8 py-6 text-gray-800 shadow-lg w-[320px] min-h-[180px] mx-auto text-left mb-6"
-                                            style={bubbleStyle}
-                                        >
-                                            <div className="h-full flex items-center">
-                                                <p className="w-full">{caseItem.text}</p>
-                                            </div>
-                                            
-                                            {/* 矢印（形状に合わせて位置調整） */}
-                                            <div 
-                                                className="absolute -bottom-5 w-0 h-0 z-10"
-                                                style={{
-                                                    left: `${30 + (index * 20)}%`,
-                                                    borderLeft: '18px solid transparent',
-                                                    borderRight: '18px solid transparent',
-                                                    borderTop: '24px solid white',
-                                                    filter: "drop-shadow(0 2px 1px rgba(0,0,0,0.1))",
-                                                    transform: `rotate(${index % 2 === 0 ? 5 : 10}deg)`
-                                                }}
-                                            ></div>
-                                        </div>
-
-                                        {/* 画像 */}
-                                        <div
-                                            className="mx-auto mt-10 rounded-lg"
-                                            style={{
-                                                background: "#fff",
-                                                padding: "8px",
-                                                display: "inline-block",
-                                                boxShadow: "0 0 0 4px #fff",
-                                                borderRadius: "50%"
-                                            }}
-                                        >
-                                            <Image 
-                                                src={caseItem.image} 
-                                                alt={`悩みの画像 ${index + 1}`}
-                                                width={180}
-                                                height={90}
-                                                className="rounded-lg"
-                                                priority
-                                            />
-                                        </div>
-                                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">  
+                        <div className="flex flex-col items-center gap-6 w-[450px] mx-auto mb-4">
+                            <div className="relative w-full h-[350px]">
+                                <Image 
+                                    src="/images/problem/pc_text_nayami_01.png" 
+                                    alt="tittle_2_X4"
+                                    fill
+                                    className="object-cover rounded-xl"
+                                    priority
+                                />
+                                <div
+                                    className="absolute flex items-center justify-center"
+                                    style={{
+                                        top: '45%',
+                                        left: '50%',
+                                        transform: 'translate(-50%, -50%)',
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
+                                >
+                                    <p className="font-['Poppins-Medium'] w-[80%]" style={{ fontSize: "16pt" }}>
+                                        "Third time in Japan.<br />
+                                        Sushi? Check. Kimono? Done.<br />
+                                        Now I wanna see the real Japan—like the kind only locals know."
+                                    </p>
                                 </div>
-                            );
-                        })}
+                            </div>
+                            <div className="relative w-full h-[250px]">
+                                <Image 
+                                    src="/images/problem/nayami_01_X2.png" 
+                                    alt="悩み画像1"
+                                    fill
+                                    className="object-contain rounded-xl"
+                                    priority
+                                />
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-6 w-[450px] mx-auto mb-4">
+                            <div className="relative w-full h-[350px]">
+                                <Image 
+                                    src="/images/problem/pc_text_nayami_02.png" 
+                                    alt="pc_text_nayami_02"
+                                    fill
+                                    className="object-cover rounded-xl"
+                                    priority
+                                />
+                                <div
+                                    className="absolute flex items-center justify-center"
+                                    style={{
+                                        top: '45%',
+                                        left: '50%',
+                                        transform: 'translate(-50%, -50%)',
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
+                                >
+                                    <p className="font-['Poppins-Medium'] w-[80%]" style={{ fontSize: "16pt" }}>
+                                        "Was dying to do a sake/shochu/whisky tasting in Japan...<br />
+                                        Didn’t know they’re made in totally different regions! "
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="relative w-full h-[250px]">
+                                <Image 
+                                    src="/images/problem/nayami_02_X2.png" 
+                                    alt="nayami_02_X2"
+                                    fill
+                                    className="object-contain rounded-xl"
+                                    priority
+                                    style={{ background: "transparent" }}
+                                />
+                            </div>
+                        </div>
+                        <div className="flex flex-col items-center gap-6 w-[450px] mx-auto mb-4">
+                            <div className="relative w-full h-[350px]">
+                                <Image 
+                                    src="/images/problem/pc_text_nayami_03.png" 
+                                    alt="pc_text_nayami_03"
+                                    fill
+                                    className="object-cover rounded-xl"
+                                    priority
+                                />
+                                <div
+                                    className="absolute flex items-center justify-center"
+                                    style={{
+                                        top: '40%',
+                                        left: '50%',
+                                        transform: 'translate(-50%, -50%)',
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
+                                >
+                                    <p className="font-['Poppins-Medium'] w-[80%]" style={{ fontSize: "16pt" }}>
+                                        "Every time I see the Ramen store there's a huge line...<br />
+                                        But wait—Hotel + the Ramen at my time, no line, no problem!? "
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="relative w-full h-[250px]">
+                                <Image 
+                                    src="/images/problem/nayami_01_X2.png" 
+                                    alt="悩み画像1"
+                                    fill
+                                    className="object-contain rounded-xl"
+                                    priority
+                                    style={{ background: "transparent" }}
+                                />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -405,7 +414,7 @@ export default function TopPage() {
                         className=""
                         priority
                     />
-                     <p className="text-center text-gray-700 mb-8">
+                     <p className="text-center text-gray-700 mb-8 font-['Poppins-Medium']" style={{fontSize:"18pt", color:"#454545"}}>
                         &quot;s service is the solution!
                     </p>
                 </div>
@@ -441,7 +450,7 @@ export default function TopPage() {
                             aria-label="Previous solution"
                             style={{backgroundColor: "rgb(227,159,0)" , transform: 'scaleX(-1)' }}
                         >
-                             <svg width="30" height="30" viewBox="0 0 28 28" fill="none" >
+                             <svg width="45" height="45" viewBox="0 0 28 28" fill="none" >
                             <path d="M10 14h6M14 10l4 4" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="" />
                         </svg>
                         </button>
@@ -491,13 +500,14 @@ export default function TopPage() {
                                 priority
                             />
                         </div>
-                        <div className=" overflow-y-auto"> {/* 変更点 */}
-                            <h3 className="font-bold text-2xl my-6">{solutions[selectedIdx].title}</h3>
+                        <div className=" overflow-y-auto" style={{ fontSize:"20pt" , color:"#252525"}}> {/* 変更点 */}
+                            <h3 className="font-bold text-2xl my-6 font-['poppins-SemiBold']" style={{ fontSize:"20pt" }}>{solutions[selectedIdx].title}</h3>
                             {/* descriptionが配列の場合に対応 */}
                             {solutions[selectedIdx].description.map((desc: string, i: number) => (
                                         <p
                                             key={i}
                                             className="text-gray-700 text-lg md:text-xl mb-3"
+                                            style={{ fontSize:"16pt" }}
                                         >
                                             {desc}
                                         </p>
@@ -545,7 +555,7 @@ export default function TopPage() {
                             aria-label="Next solution"
                             style={{backgroundColor: "rgb(227,159,0)"}}
                         >                    
-                        <svg width="30" height="30" viewBox="0 0 28 28" fill="none" >
+                        <svg width="45" height="45" viewBox="0 0 28 28" fill="none" >
                             <path d="M10 14h6M14 10l4 4" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="" />
                         </svg>
                         </button>
@@ -568,6 +578,7 @@ export default function TopPage() {
             </div>
 
             {/* =============================================
+            Introducing 4steps to paca!
             how to use
             ============================================= */}
             {/* ソリューションセクション - デザイン完全維持 */}
@@ -578,11 +589,11 @@ export default function TopPage() {
                 <div  className="pt-70">
                     {/* タイトルエリア */}
                     <div className="flex flex-col items-center">
-                    <p className="text-base tracking-widest text-gray-500 mb-2">OUR SERVICES</p>
+                    <p className="text-base tracking-widest text-gray-500 mb-2 font-['poppins-Medium']" style={{fontSize:"18pt" , color:"#454545"}}>Intoroducing 4steps to use paca!</p>
                     <Image src="/images/text_title/tittle_3_X4.png" 
                         alt="tittle_3_X4"
-                        width={320}
-                        height={110}
+                        width={450}
+                        height={150}
                         className="mx-auto mb-2"
                         priority/>
                     - - - - - -
@@ -627,7 +638,7 @@ export default function TopPage() {
                                     />
                                 </div>
                                 <div className="flex-1 text-left">
-                                    <p className="text-2xl text-gray-800 font-semibold leading-relaxed">
+                                    <p className="font-['poppins-Medium']" style={{ color:"#454545" , fontSize: "20pt"}}>
                                         {item}
                                     </p>
                                 </div>
@@ -637,16 +648,18 @@ export default function TopPage() {
                     
                     <div className="relative flex justify-center mt-15 w-1/2 m-auto">
                         <div className="mt-30 text-center w-full">
-                                <Link href="/top">
-                                    <Image
-                                        src="/images/button/try_usingpaca.jpg"
-                                        alt="trypaca_btn"
-                                        width={1920}
-                                        height={100}
-                                        className="w-full h-auto mb-2 rounded-md shadow cursor-pointer"
-                                        priority
-                                    />
-                                </Link>
+                            <Link href="/">
+                                <button
+                                    className="relative w-[750px] h-[125px] bg-black text-white rounded-xl text-3xl font-['Poppins-SemiBold'] flex items-center justify-center mx-auto shadow-lg transition hover:bg-gray-800"
+                                    style={{
+                                        backgroundColor: '#e59d00',
+                                        fontSize: '22pt',
+                                        borderRadius: '10px' // さらに角を強調
+                                    }}
+                                >
+                                    Try Using paca!
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -697,11 +710,12 @@ export default function TopPage() {
             </div>
 
             {/* =============================================
-            map
+            Introducing a selection of famous Japanese products
+            pick up
             ============================================= */}
             <div className="relative -top-10 w-full  pt-25 rounded-4xl bg-white">
                 <div className="flex flex-col items-center">
-                    <p className="text-base tracking-widest text-gray-500 mb-2">Introducing a selection of famous Japanese products</p>
+                    <p className="text-base tracking-widest text-gray-500 mb-2 font-['poppins-Medium']" style={{color :"#454545", fontSize: "18pt"}}>Introducing a selection of famous Japanese products</p>
                     <Image src="/images/text_title/tittle_4_X4.png" alt="tittle_4_X4"
                         width={320}
                         height={110}
@@ -721,11 +735,12 @@ export default function TopPage() {
             </div>
 
             {/* =============================================
+            Please feel to contact us!
             contact
             ============================================= */}
             <div className="relative w-full py-25 " style={{ backgroundColor: 'rgb(229, 229, 228)' }}>
                 <div className="flex flex-col items-center">
-                    <p className="text-base tracking-widest text-gray-500 mb-2">Please feel to contact us!</p>
+                    <p className="font-['poppins-Medium']" style={{color:"#454545" , fontSize:"18pt"}}>Please feel to contact us!</p>
                     <Image src="/images/text_title/tittle_4_X4.png" alt="tittle_4"
                         width={320}
                         height={110}
@@ -733,18 +748,20 @@ export default function TopPage() {
                         priority/>
                     - - - - - -
 
-                    <div className="flex justify-center mt-15">
-                        <Link href="/">
-                        <Image
-                            src="/images/button/contact.png"
-                            alt="contact_btn"
-                            width={640}
-                            height={50}
-                            className="mx-auto mb-2 rounded-md shadow cursor-pointer"
-                            priority
-                        />
-                        </Link>
-                    </div>
+                    <div className="mt-15 text-center w-full">
+                            <Link href="/">
+                                <button
+                                    className="relative w-[650px] h-[100px] bg-black text-white rounded-xl text-3xl font-['Poppins-SemiBold'] flex items-center justify-center mx-auto shadow-lg transition hover:bg-gray-800"
+                                    style={{
+                                        backgroundColor: '#454545',
+                                        fontSize: '22pt',
+                                        borderRadius: '10px' // さらに角を強調
+                                    }}
+                                >
+                                    CONTACT
+                                </button>
+                            </Link>
+                        </div>
                 </div>
 
                 <div className="absolute z-20 w-[45%] h-[45%] flex items-end justify-start pointer-events-none"

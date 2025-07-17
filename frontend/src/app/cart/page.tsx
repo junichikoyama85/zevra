@@ -3,6 +3,8 @@ import { FiTrash2, FiChevronUp, FiChevronDown } from 'react-icons/fi';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCartContext } from '@/contexts/CartContext';
+import Header from "@/components/Header";
+
 
 export default function CartPage() {
   const { 
@@ -31,7 +33,9 @@ export default function CartPage() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <>
+      <Header />
+       <div className="max-w-7xl mx-auto px-4 py-30">
       <h1 className="text-2xl font-bold mb-6">ショッピングカート ({totalItems}点)</h1>
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -106,5 +110,7 @@ export default function CartPage() {
         </div>
       </div>
     </div>
+    </>
+ 
   );
 }

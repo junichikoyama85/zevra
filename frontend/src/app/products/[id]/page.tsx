@@ -72,7 +72,7 @@ export default function ProductDetail({ params }: { params: Promise<{ id: string
   return (
     <>
       <Header />
-      <div className="max-w-7xl mx-auto px-4 py-8">
+      <div className="max-w-7xl mx-auto px-4 py-30">
       <Link href="/" className="flex items-center text-blue-500 mb-4">
         <FiChevronLeft className="mr-1" />
         商品一覧に戻る
