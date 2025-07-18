@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function HomeHeader() {
   return (
-    <header className="fixed top-0 w-full z-999 bg-transparent">
+    <header className="fixed top-0 w-full z-999 ">
       <div className="w-[90%] mx-auto flex justify-between items-center py-4">
         <Link href="/" className="relative w-40 h-20 flex items-center justify-center">
           <Image

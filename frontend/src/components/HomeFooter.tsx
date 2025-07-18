@@ -106,9 +106,9 @@ export default function HomeFooter() {
                                 [
                                     'FAQ',
                                     'Terms of Use',
-                                    'Commercial Law',
+                                    'Specified Commercial Tramsaction Act',
                                     'Privacy Policy',
-                                    'Cancellation'
+                                    'Cancellation Policy',
                                 ].map((item) => (
                                     <li key={item}>
                                         <Link href="#" className="text-lg text-black hover:text-yellow-500 transition flex items-center">
@@ -120,19 +120,17 @@ export default function HomeFooter() {
                     </div>
 
                     {/* ボタン (右側下部) */}
-                    <div className="mt-12 text-center w-full">
-                        <Link href="/">
-                            <button className="relative w-[400px] h-[80px] text-white font-['Poppins-SemiBold']"
-                                style={
-                                    {
-                                        backgroundColor: '#e59d00',
-                                        fontSize: '22pt',
-                                        borderRadius: '10px' // さらに角を強調
-                                    }
-                            }>
-                                Try paca!
-                            </button>
-                        </Link>
+                    <div className="mt-15 text-center w-full">
+                            <Link href="/top">
+                            <Image
+                                src="/images/button/try_paca.jpg"
+                                alt="contact_btn"
+                                width={400}
+                                height={100}
+                                className="mx-auto mb-2 rounded-md shadow cursor-pointer"
+                                priority
+                            />
+                            </Link>
                     </div>
                 </div>
             </div>

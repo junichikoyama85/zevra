@@ -243,21 +243,20 @@ export default function TopPage() {
                         </div>
 
                         {/* 「詳しく見る」ボタン */}
+              
                         <div className="mt-30 text-center w-full">
-                            <Link href="/">
-                                <button
-                                    className="relative w-[750px] h-[125px] bg-black text-white rounded-xl text-3xl font-['Poppins-SemiBold'] flex items-center justify-center mx-auto shadow-lg transition hover:bg-gray-800"
-                                    style={{
-                                        backgroundColor: '#e59d00',
-                                        fontSize: '22pt',
-                                        borderRadius: '10px' // さらに角を強調
-                                    }}
-                                >
-                                    Try Using paca!
-                                </button>
+                            <Link href="/top">
+                            <Image
+                                src="/images/button/try_usingpaca.jpg"
+                                alt="try_usingpaca"
+                                width={640}
+                                height={50}
+                                className="mx-auto mb-2 rounded-md shadow cursor-pointer"
+                                priority
+                            />
                             </Link>
                         </div>
-                       
+                            
                     </div>
                 </div>
             </div>
@@ -648,17 +647,15 @@ export default function TopPage() {
                     
                     <div className="relative flex justify-center mt-15 w-1/2 m-auto">
                         <div className="mt-30 text-center w-full">
-                            <Link href="/">
-                                <button
-                                    className="relative w-[750px] h-[125px] bg-black text-white rounded-xl text-3xl font-['Poppins-SemiBold'] flex items-center justify-center mx-auto shadow-lg transition hover:bg-gray-800"
-                                    style={{
-                                        backgroundColor: '#e59d00',
-                                        fontSize: '22pt',
-                                        borderRadius: '10px' // さらに角を強調
-                                    }}
-                                >
-                                    Try Using paca!
-                                </button>
+                            <Link href="/top">
+                            <Image
+                                src="/images/button/try_usingpaca.jpg"
+                                alt="try_usingpaca"
+                                width={800}
+                                height={100}
+                                className="mx-auto mb-2 rounded-md shadow cursor-pointer"
+                                priority
+                            />
                             </Link>
                         </div>
                     </div>

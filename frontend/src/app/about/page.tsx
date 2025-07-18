@@ -50,21 +50,21 @@ export default function AboutPage() {
         </div>
 
         {/* コンテンツセクション */}
-        <div className="w-[80%] mx-auto px-6 py-20 text-left">
-            <p className="text-sm uppercase tracking-widest text-gray-500">
+        <div className="w-[80%] mx-auto px-6 py-30 text-left">
+            <p className="font-['Poppins-Medium']" style={{fontSize:'14pt' , color:"#454545"}}>
                 (VISION)
             </p>
-            <h1 className="text-4xl md:text-5xl font-bold leading-relaxed font-['Poppins-Bold']">
+            <h1 className="font-['Poppins-Bold']" style={{fontSize:'50pt' , color:"#252525"}}>
             Reimagining the world <br />
             <span>— starting in Japan</span>
             </h1>
 
             <div className="space-y-6 mt-30">
-            <p className="text-sm uppercase tracking-widest text-gray-500">
-                (ABOUT Zebra)
+      
+            <p className="font-['Poppins-Medium']" style={{fontSize:'14pt' , color:"#454545"}}>
+              (ABOUT Zebra)
             </p>
-
-            <div className="space-y-6 mt-15">
+            <div className="space-y-6 mt-15 font-['Poppins-Medium']" style={{fontSize:'18pt' , color:"#252525"}}>
                 <p className="text-gray-700 leading-relaxed">
                 Born from the fusion of Zeal—passion, commitment, and conviction—and Era—a new age,<br />
                 Zevra represents those who dare to forge the future through unshakable determination.
@@ -91,34 +91,34 @@ export default function AboutPage() {
         <div id="company" className='p-15' style={{ backgroundColor: 'rgb(242, 242, 242)' }}>
           <div className="w-[60%] mx-auto px-6 py-12 rounded-lg">
             <div className="flex flex-col items-center justify-center mb-6">
-              <span className="text-base text-gray-600 mb-1">会社概要</span>
-              <h2 className="text-5xl font-bold text-gray-800 font-['Poppins-Bold']">COMPANY</h2>
+              <span  style={{fontSize: "14pt" ,color:"#454545"}}>会社概要</span>
+              <h2 className="font-['Poppins-Bold']" style={{fontSize:"45pt" , color: "#252525"}}>COMPANY</h2>
             </div>
             <div className="flex flex-col gap-8 pt-30">
               {/* 各項目に下線と余白を追加 */}
               <div className="flex py-6 border-t border-b border-gray-200">
-                <h3 className="text-lg font-semibold mb-2 text-gray-700 w-1/3">会社名</h3>
-                <p className="text-gray-600 w-2/3">株式会社Zevra / Zevra, Inc.</p>
+                <h3 className="w-1/3" style={{fontSize:"16pt" , color:"#454545"}}>会社名</h3>
+                <p className="w-2/3" style={{fontSize:"16pt" , color:"#252525"}}>株式会社Zevra / Zevra, Inc.</p>
               </div>
               <div className="flex pb-6 border-b border-gray-200">
-                <h3 className="text-lg font-semibold mb-2 text-gray-700 w-1/3">設立</h3>
-                <p className="text-gray-600 w-2/3">2025年6月10日(第一創業:2023年9月15日)</p>
+                <h3 className="w-1/3" style={{fontSize:"16pt" , color:"#454545"}}>設立</h3>
+                <p className="w-2/3" style={{fontSize:"16pt" , color:"#252525"}}>2025年6月10日(第一創業:2023年9月15日)</p>
               </div>
               <div className="flex pb-6 border-b border-gray-200">
-                <h3 className="text-lg font-semibold mb-2 text-gray-700 w-1/3">代表者名</h3>
-                <p className="text-gray-600 w-2/3">大神千朋</p>
+                <h3 className="w-1/3" style={{fontSize:"16pt" , color:"#454545"}}>代表者名</h3>
+                <p className="w-2/3" style={{fontSize:"16pt" , color:"#252525"}}>大神千朋</p>
               </div>
               <div className="flex pb-6 border-b border-gray-200">
-                <h3 className="text-lg font-semibold mb-2 text-gray-700 w-1/3">事業内容</h3>
-                <p className="text-gray-600 w-2/3">ECモール｢paca!｣の提供</p>
+                <h3 className="w-1/3" style={{fontSize:"16pt" , color:"#454545"}}>事業内容</h3>
+                <p className="w-2/3" style={{fontSize:"16pt" , color:"#252525"}}>ECモール｢paca!｣の提供</p>
               </div>
               <div className="flex pb-6 border-b border-gray-200">
-                <h3 className="text-lg font-semibold mb-2 text-gray-700 w-1/3">認証</h3>
-                <p className="text-gray-600 w-2/3">通信販売酒類小売業免許</p>
+                <h3 className="w-1/3" style={{fontSize:"16pt" , color:"#454545"}}>認証</h3>
+                <p className="w-2/3" style={{fontSize:"16pt" , color:"#252525"}}>通信販売酒類小売業免許</p>
               </div>
               <div className="flex pb-6 border-b border-gray-200"> {/* 最後の項目は下線なし */}
-                <h3 className="text-lg font-semibold mb-2 text-gray-700 w-1/3">住所</h3>
-                <p className="text-gray-600 w-2/3">
+                <h3 className="w-1/3" style={{fontSize:"16pt" , color:"#454545"}}>住所</h3>
+                <p className="w-2/3" style={{fontSize:"16pt" , color:"#252525"}}>
                     東京オフィス:〒101-0024 東京都千代田区神田和泉町1番地6-16<br />
                     神戸オフィス:〒657-0836 兵庫県神戸市灘区城内2-5-20
                 </p>
@@ -142,36 +142,71 @@ export default function AboutPage() {
         
 
         {/* お知らせセクション */}
-        <div id="news" style={{ backgroundColor: 'rgb(242, 242, 242)' }}>
-            <div className="w-[60%] mx-auto px-6 py-12 rounded-lg">
-                <div className="flex flex-col items-center justify-center mb-6">
-                    <span className="text-base text-gray-600 mb-1">お知らせ</span>
-                    <h2 className="text-5xl font-bold text-gray-800 font-['Poppins-Bold']">NEWS</h2>
-                </div>
+        <div id="news" style={{ backgroundColor: '#f4f4f4' }}>
+            <div className="w-[70%] mx-auto px-6 py-12 rounded-lg">
+              <div className="flex flex-col items-center justify-center mb-6">
+                <span  style={{fontSize: "14pt" ,color:"#454545"}}>お知らせ</span>
+                <h2 className="font-['Poppins-Bold']" style={{fontSize:"45pt" , color: "#252525"}}>NEWS</h2>
+              </div>
                 
                 <div className="flex flex-col  pt-30">
                     {/* お知らせデータを繰り返し表示 */}
                     {newsData.map((news, idx) => (
                         <div
                             key={idx}
-                            className="flex  items-start md:items-center gap-2 border-b border-gray-200 py-8 transition-colors duration-200 hover:bg-white"
+                            className="flex items-start md:items-center gap-4 border-b border-gray-200 py-8 transition-colors duration-200 hover:bg-white"
                         >
-                            <Link href={`news/${news.id}`} className="flex flex-col md:flex-row md:items-center gap-2 w-full group">
-                                <span className="text-sm text-gray-500 w-24">{news.date}</span>
-                                <span className="w-48 flex-1 text-gray-800 font-medium group-hover:underline break-words ">{news.title}</span>
+                            <Link 
+                                href={`news/${news.id}`} 
+                                className="flex flex-col md:flex-row md:items-center gap-4 w-full group"
+                            >
+                                {/* 日付: 幅を固定し、中央揃え */}
+                                <span 
+                                    className="text-sm w-24 md:w-32 text-center md:text-left" 
+                                    style={{ color: "#454545", fontSize: "16pt" }}
+                                >
+                                    {news.date}
+                                </span>
+
+                                {/* タイトル: 残りのスペースを占有 */}
+                                <span 
+                                    className="flex-1 min-w-0 group-hover:underline" 
+                                    style={{ fontSize: "16pt", color: "#252525" }}
+                                >
+                                    {news.title}
+                                </span>
+
+                                {/* カテゴリ: 幅を固定 */}
                                 <span
-                                    className={`px-6 py-3 mx-15 text-xm rounded-full text-white
+                                    className={`flex items-center justify-center text-xm rounded-full text-white shrink-0 mx-20
                                         ${news.category === 'Zevra'
-                                            ? 'bg-black'
+                                            ? 'bg-[#252525]'
                                             : news.category === 'paca!'
-                                                ? 'bg-orange-400'
+                                                ? 'bg-[#e59d00]'
                                                 : 'bg-gray-200 text-gray-600'}
                                     `}
+                                    style={{ width: '80px', height: '30px', fontSize: "14pt" }}
                                 >
                                     {news.category}
                                 </span>
-                                <svg width="30" height="30" viewBox="0 0 28 28" fill="none">
-                                    <path d="M10 14h6M14 10l4 4" stroke="#000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+
+                                {/* 矢印アイコン */}
+                                {/* 棒線（矢印）の長さを長くしました */}
+                                <svg 
+                                    width="32" 
+                                    height="32" 
+                                    viewBox="0 0 36 36" 
+                                    fill="none" 
+                                    className="shrink-0"
+                                >
+                                    <path 
+                                        d="M8 18h14M18 12l8 6" 
+                                        stroke="#252525" 
+                                        strokeWidth="2.5" 
+                                        strokeLinecap="round" 
+                                        strokeLinejoin="round" 
+                                        fill="none"
+                                    />
                                 </svg>
                             </Link>
                         </div>
@@ -180,42 +215,47 @@ export default function AboutPage() {
 
                 <div className="flex justify-center mt-16">
                   <button
-                    style={{backgroundColor: 'rgb(61, 61, 61)' }}
-                    className="px-20 py-4 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
+                    style={{
+                      width: '350px',
+                      height: '80px',
+                      backgroundColor: "#454545",
+                    }}
+                    className="text-white rounded-lg "
                   >
                     VIEW MORE
                   </button>
                 </div>
+                
             </div>
         </div>
          
 
         {/* お知らせセクション */}
-        <div id="contact" className="w-[80%] mx-auto px-6 py-40">
-            {/* タイトルエリア */}
-            <div className="flex flex-col items-center mb-10">
-            <p className="text-base tracking-widest text-gray-500 mb-2">Please feel free to contact us!</p>
-            <Image src="/images/text_title/tittle_1_X4.png" alt="title_1"
-                width={320}
-                height={110}
-                className="mx-auto mb-2"
-                priority/>
-            - - - - - -
-            </div>
+        <div className="relative w-full py-25 ">
+                <div className="flex flex-col items-center">
+                    <p className="font-['poppins-Medium']" style={{color:"#454545" , fontSize:"18pt"}}>Please feel to contact us!</p>
+                    <Image src="/images/text_title/tittle_5_X4.png" alt="tittle_4"
+                        width={250}
+                        height={110}
+                        className="mx-auto mb-2"
+                        priority/>
+                    - - - - - -
 
-            <div className="flex justify-center">
-              <Link href="/contact">
-                <Image
-                  src="/images/button/contact.png"
-                  alt="contact_btn"
-                  width={640}
-                  height={50}
-                  className="mx-auto mb-2 rounded-md shadow cursor-pointer"
-                  priority
-                />
-              </Link>
+                    <div className="flex justify-center mt-15">
+                      <Link href="/contact">
+                        <Image
+                          src="/images/button/contact.png"
+                          alt="contact_btn"
+                          width={640}
+                          height={50}
+                          className="mx-auto mb-2 rounded-md shadow cursor-pointer"
+                          priority
+                        />
+                      </Link>
+                    </div>
+                </div>
+
             </div>
-        </div>
       </div>
       <HomeFooter />
     </>
