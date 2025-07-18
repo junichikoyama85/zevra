@@ -584,9 +584,9 @@ export default function TopPage() {
                                         className="font-['Poppins-Medium'] w-[90%] sm:w-[80%] text-[12pt] sm:text-[16pt]"
                                         style={{ lineHeight: "1.5" }}
                                     >
-                                        "Third time in Japan.<br />
+                                        &ldquo;Third time in Japan.<br />
                                         Sushi? Check. Kimono? Done.<br />
-                                        Now I wanna see the real Japan—like the kind only locals know."
+                                        Now I wanna see the real Japan—like the kind only locals know.&ldquo;
                                     </p>
                                 </div>
                             </div>
@@ -620,8 +620,8 @@ export default function TopPage() {
                                     }}
                                 >
                                     <p className="font-['Poppins-Medium'] w-[90%] sm:w-[80%] text-[12pt] sm:text-[16pt]" style={{  lineHeight: "1.5", }}>
-                                        "Was dying to do a sake/shochu/whisky tasting in Japan...<br />
-                                        Didn’t know they’re made in totally different regions! "
+                                    &ldquo;Was dying to do a sake/shochu/whisky tasting in Japan...<br />
+                                        Didn’t know they’re made in totally different regions! &ldquo;
                                     </p>
                                 </div>
                             </div>
@@ -656,8 +656,8 @@ export default function TopPage() {
                                     }}
                                 >
                                     <p className="font-['Poppins-Medium'] w-[90%] sm:w-[80%] text-[12pt] sm:text-[16pt]" style={{ lineHeight: "1.5", }}>
-                                        "Every time I see the Ramen store there's a huge line...<br />
-                                        But wait—Hotel + the Ramen at my time, no line, no problem!? "
+                                    &ldquo;Every time I see the Ramen store there&apos; s a huge line...<br />
+                                        But wait—Hotel + the Ramen at my time, no line, no problem!? &ldquo;
                                     </p>
                                 </div>
                             </div>
@@ -679,7 +679,7 @@ export default function TopPage() {
             {/* =============================================
             solution
             ============================================= */}
-            {/* <div className="relative -top-10 w-full  pt-25 rounded-4xl bg-white">
+            <div className="relative -top-10 w-full  pt-25 rounded-4xl bg-white">
                 <div className="flex justify-center items-end gap-4">
                     <Image 
                         src="/images/text_title/tittle_paca_X4.png" 
@@ -849,7 +849,7 @@ export default function TopPage() {
                         />
                     </div>
                 </div>
-            </div> */}
+            </div>
 
             {/* =============================================
             Introducing 4steps to paca!
