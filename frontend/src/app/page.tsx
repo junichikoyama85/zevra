@@ -41,73 +41,197 @@ export default function TopPage() {
             main
             ============================================= */}
             <div className="relative w-full h-screen" style={{backgroundColor:"#f8f7f1"}}>
-                <Image src="/images/main_visual/back_mv.png" alt="back_mv" fill className="object-cover" priority/>
-                <div className="absolute right-[15%] top-1/2 transform -translate-y-1/2  z-10 w-[17%] h-1/2 flex items-center justify-start pointer-events-none">
+                {/* PC用背景画像 */}
+                <Image
+                  src="/images/main_visual/back_mv.png"
+                  alt="back_mv"
+                  fill
+                  className="object-cover hidden sm:block"
+                  priority
+                />
+                {/* スマホ用背景画像 */}
+                <Image
+                  src="/images/main_visual/sp_back_mv.png"
+                  alt="sp_back_mv"
+                  fill
+                  className="object-cover block sm:hidden"
+                  priority
+                />
+                {/* PC（sm以上）の場合は右側中央、スマホ（sm未満）の場合は上部中央に配置 */}
+                <div>
+                  {/* PC用配置 */}
+                  <div className="absolute right-[15%] top-1/2 transform -translate-y-1/2 z-10 w-[17%] h-1/2 flex items-center justify-start pointer-events-none hidden sm:flex">
                     <Image src="/images/main_visual/_paca_mv_1.png" alt="_paca_mv_1" fill className="object-contain" priority/>
+                  </div>
+                  {/* スマホ用配置 */}
+                  <div className="absolute right-0 top-[15%] transform -translate-x-1/2 z-10 w-[35vw] h-[35vw] flex items-start justify-center pointer-events-none sm:hidden">
+                    <Image src="/images/main_visual/_paca_mv_1.png" alt="_paca_mv_1" fill className="object-contain" priority/>
+                  </div>
                 </div>
-                <div className="absolute left-1/2 z-10 w-[18%] h-1/3 flex items-start justify-center pointer-events-none"
-                    style={{
-                        top: '60%',
-                        left: '40%',
-                        transform: 'rotate(-20deg)'
-                    }}>
-                    <Image src="/images/main_visual/_paca_mv_2.png" alt="_paca_mv_2" fill className="object-contain" priority/>
+                <div
+                  className="absolute left-1/2 z-10 w-[18%] h-1/3 flex items-start justify-center pointer-events-none hidden sm:flex"
+                  style={{
+                    top: '60%',
+                    left: '40%',
+                    transform: 'rotate(-20deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/_paca_mv_2.png" alt="_paca_mv_2" fill className="object-contain" priority />
                 </div>
-                <div className="absolute z-10 w-[30%] h-1/2 flex items-start justify-end pointer-events-none"
+                {/* PC（sm以上）の場合は左上、スマホ（sm未満）の場合は下部中央に配置 */}
+                {/* PC用配置 */}
+                <div className="absolute z-10 w-[30%] h-1/2 flex items-start justify-end pointer-events-none hidden sm:flex"
                     style={{
                         top: '15%',
                         left: '7%'
                     }}>
                     <Image src="/images/main_visual/_paca_mv_3.png" alt="_paca_mv_3" fill className="object-contain" priority/>
                 </div>
-                <div className="absolute z-10 w-[18%] h-1/3 flex items-start justify-end pointer-events-none"
+                {/* スマホ用配置 */}
+                <div className="absolute z-10 w-[50vw] h-[50vw] flex items-end justify-center pointer-events-none sm:hidden"
                     style={{
-                        top: '15%',
-                        left: '5%',
-                        transform: 'rotate(-10deg)'
+                        bottom: '10%',
+                        left: '41%',
+                        transform: 'translateX(-50%)'
                     }}>
-                    <Image src="/images/main_visual/sousyoku_3.png" alt="sousyoku_3.png" fill className="object-contain" priority/>
+                    <Image src="/images/main_visual/_paca_mv_3.png" alt="_paca_mv_3" fill className="object-contain" priority/>
                 </div>
-                <div className="absolute z-10 w-[9%] h-[12%] flex items-start justify-end pointer-events-none"
+                {/* PC（sm以上）用配置 */}
+                <div
+                  className="absolute z-10 w-[18%] h-1/3 flex items-start justify-end pointer-events-none hidden sm:flex"
+                  style={{
+                    top: '15%',
+                    left: '5%',
+                    transform: 'rotate(-10deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/sousyoku_3.png" alt="sousyoku_3.png" fill className="object-contain" priority />
+                </div>
+                {/* スマホ（sm未満）用配置：大きく表示 */}
+                <div
+                  className="absolute z-10 w-[30vw] h-[30vw] flex items-start justify-end pointer-events-none sm:hidden"
+                  style={{
+                    top: '25%',
+                    left: '0%',
+                    transform: 'rotate(-10deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/sousyoku_3.png" alt="sousyoku_3.png" fill className="object-contain" priority />
+                </div>
+                {/* PC（sm以上）は元の位置、スマホ（sm未満）は左側に配置 */}
+                <div>
+                  {/* PC用配置 */}
+                  <div
+                    className="absolute z-10 w-[9%] h-[12%] flex items-start justify-end pointer-events-none hidden sm:flex"
                     style={{
-                        top: '66%',
-                        left: '33%',
-                        transform: 'rotate(-10deg)'
-                    }}>
-                    <Image src="/images/main_visual/dango.png" alt="団子" fill className="object-contain" priority/>
-                </div>
-                <div className="absolute z-10 w-[9%] h-[12%] flex items-start justify-end pointer-events-none"
+                      top: '66%',
+                      left: '33%',
+                      transform: 'rotate(-10deg)'
+                    }}
+                  >
+                    <Image src="/images/main_visual/dango.png" alt="団子" fill className="object-contain" priority />
+                  </div>
+                  {/* スマホ用配置（左寄せ） */}
+                  <div
+                    className="absolute z-10 w-[18vw] h-[18vw] flex items-start justify-start pointer-events-none sm:hidden"
                     style={{
-                        top: '75%',
-                        left: '28%',
-                        transform: 'rotate(-20deg)'
-                    }}>
-                    <Image src="/images/main_visual/kyusu.png" alt="急須" fill className="object-contain" priority/>
+                      top: '40%',
+                      left: '0%',
+                      transform: 'rotate(-10deg)'
+                    }}
+                  >
+                    <Image src="/images/main_visual/dango.png" alt="団子" fill className="object-contain" priority />
+                  </div>
                 </div>
-                <div className="absolute z-20 w-[10%] h-[13%] flex items-center justify-center pointer-events-none"
-                    style={{
-                        top: '10%',
-                        left: '30%'
-                    }}>
-                    <Image src="/images/main_visual/sennsu.png" alt="扇子" fill className="object-contain" priority/>
+                {/* PC用配置（sm以上） */}
+                <div
+                  className="absolute z-10 w-[9%] h-[12%] flex items-start justify-end pointer-events-none hidden sm:flex"
+                  style={{
+                    top: '75%',
+                    left: '28%',
+                    transform: 'rotate(-20deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/kyusu.png" alt="急須" fill className="object-contain" priority />
                 </div>
-                <div className="absolute z-20 w-[10%] h-[13%] flex items-center justify-center pointer-events-none"
-                    style={{
-                        top: '15%',
-                        left: '38%',
-                        transform: 'rotate(20deg)'
-                    }}>
-                    <Image src="/images/main_visual/daruma.png" alt="達磨" fill className="object-contain" priority/>
+                {/* スマホ用配置（位置を変更） */}
+                <div
+                  className="absolute z-10 w-[18vw] h-[18vw] flex items-start justify-start pointer-events-none sm:hidden"
+                  style={{
+                    top: '60%',
+                    right: '25%',
+                    transform: 'rotate(-20deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/kyusu.png" alt="急須" fill className="object-contain" priority />
                 </div>
-                <div className="absolute z-20 w-[18%] h-[20%] flex items-center justify-center pointer-events-none"
-                    style={{
-                        top: '10%',
-                        left: '52%',
-                        transform: 'rotate(0deg)'
-                    }}>
-                    <Image src="/images/main_visual/sousyoku_2.png" alt="sousyoku_2" fill className="object-contain" priority/>
+                {/* PC用配置（sm以上） */}
+                <div
+                  className="absolute z-20 w-[10%] h-[13%] flex items-center justify-center pointer-events-none hidden sm:flex"
+                  style={{
+                    top: '10%',
+                    left: '30%',
+                  }}
+                >
+                  <Image src="/images/main_visual/sennsu.png" alt="扇子" fill className="object-contain" priority />
                 </div>
-                <div className="absolute z-20 w-[24%] h-[33%] flex items-start justify-end pointer-events-none font-['Poppins-Bold']"
+                {/* スマホ用配置（位置を変更） */}
+                <div
+                  className="absolute z-20 w-[18vw] h-[18vw] flex items-center justify-center pointer-events-none sm:hidden"
+                  style={{
+                    top: '15%',
+                    left: '20%',
+                  }}
+                >
+                  <Image src="/images/main_visual/sennsu.png" alt="扇子" fill className="object-contain" priority />
+                </div>
+                {/* PC用配置（sm以上） */}
+                <div
+                  className="absolute z-20 w-[10%] h-[13%] flex items-center justify-center pointer-events-none hidden sm:flex"
+                  style={{
+                    top: '15%',
+                    left: '38%',
+                    transform: 'rotate(20deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/daruma.png" alt="達磨" fill className="object-contain" priority />
+                </div>
+                {/* スマホ用配置（位置を調整） */}
+                <div
+                  className="absolute z-20 w-[15vw] h-[15vw] flex items-center justify-center pointer-events-none sm:hidden"
+                  style={{
+                    top: '25%',
+                    left: '33%',
+                    transform: 'rotate(20deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/daruma.png" alt="達磨" fill className="object-contain" priority />
+                </div>
+                {/* PC用（sm以上で表示） */}
+                <div
+                  className="absolute z-20 w-[18%] h-[20%] flex items-center justify-center pointer-events-none hidden sm:flex"
+                  style={{
+                    top: '14%',
+                    left: '52%',
+                    transform: 'rotate(0deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/sousyoku_2.png" alt="sousyoku_2" fill className="object-contain" priority />
+                </div>
+                {/* スマホ用（sm未満で表示、位置を変更） */}
+                <div
+                  className="absolute z-20 w-[30vw] h-[20vw] flex items-center justify-center pointer-events-none sm:hidden"
+                  style={{
+                    top: '28%',
+                    right: '0%',
+                    transform: 'rotate(-10deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/sousyoku_2.png" alt="sousyoku_2" fill className="object-contain" priority />
+                </div>
+                {/* PC用（sm以上で表示） */}
+                <div
+                    className="absolute z-20 w-[24%] h-[33%] flex items-start justify-end pointer-events-none font-['Poppins-Bold'] hidden sm:flex"
                     style={{
                         top: '62%',
                         left: '8%',
@@ -115,11 +239,34 @@ export default function TopPage() {
                     }}>
                     <Image src="/images/main_visual/sousyoku_4.png" alt="sousyoku_4" fill className="object-contain" priority/>
                 </div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center z-10 ">
-                    <p className="text-lg text-black bg-opacity-70 px-4 font-['Poppins-SemiBold']" style={{fontSize: "17pt"}}>
-                        The whole &quot;Made in JAPAN&quot; at your fingertips
+                {/* スマホ用（sm未満で表示、位置を変更） */}
+                <div
+                    className="absolute z-20 w-[33vw] h-[33vw] flex items-end justify-center pointer-events-none font-['Poppins-Bold'] sm:hidden"
+                    style={{
+                        bottom: '20%',
+                        left: '-5%',
+                        transform: 'rotate(200deg)'
+                    }}>
+                    <Image src="/images/main_visual/sousyoku_4.png" alt="sousyoku_4" fill className="object-contain" priority/>
+                </div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+                    <p className="bg-opacity-70 px-4 font-['Poppins-SemiBold'] text-center" style={{color:"#454545"}}>
+                        <span className="text-[13pt] md:text-[17pt] block sm:inline">
+                            The whole&nbsp;&quot;Made in JAPAN&quot;
+                        </span>
+                        <span className="text-[13pt] md:text-[17pt] block sm:inline">
+                            &nbsp;at your fingertips
+                        </span>
                     </p>
-                    <div className="relative w-[33rem] h-[15rem] flex items-center justify-center">
+                    <div
+                        className="
+                            relative
+                            w-[15rem] h-[6rem]
+                            sm:w-[24rem] sm:h-[11rem]
+                            md:w-[33rem] md:h-[15rem]
+                            flex items-center justify-center
+                        "
+                    >
                         <Image
                             src="/images/text_title/tittle_paca_mv_X2.png"
                             alt="paca! メインタイトル"
@@ -129,14 +276,22 @@ export default function TopPage() {
                         />
                     </div>
                 </div>
-                <div className="absolute z-20 w-[9%] h-[12%] flex items-end justify-start pointer-events-none"
+                <div className="absolute z-20 w-[9%] h-[12%] flex items-end justify-start pointer-events-none hidden sm:flex"
                     style={{
                         top: '65%',
                         left: '53%',
                     }}>
                     <Image src="/images/main_visual/tokkuri.png" alt="徳利" fill className="object-contain" priority/>
                 </div>
-                <div className="absolute z-20 w-[9%] h-[12%] flex items-end justify-start pointer-events-none"
+                {/* PC画面とスマホ画面で位置を切り替える */}
+                {/* PC用（sm以上で表示） */}
+                <div
+                    className="
+                        absolute z-20
+                        hidden sm:flex
+                        w-[9%] h-[9%]
+                        flex items-end justify-start pointer-events-none
+                    "
                     style={{
                         top: '75%',
                         left: '63%',
@@ -144,13 +299,65 @@ export default function TopPage() {
                     }}>
                     <Image src="/images/main_visual/kani.png" alt="蟹" fill className="object-contain" priority/>
                 </div>
-                <div className="absolute z-20 w-[10%] h-[40%] flex items-end justify-start pointer-events-none"
+                {/* スマホ用（sm未満で表示） */}
+                <div
+                    className="
+                        absolute z-20
+                        flex sm:hidden
+                        w-[18%] h-[18%]
+                        items-end justify-start pointer-events-none
+                    "
+                    style={{
+                        bottom: '15%',
+                        right: '20%',
+                        transform: 'rotate(-15deg)'
+                    }}>
+                    <Image src="/images/main_visual/kani.png" alt="蟹" fill className="object-contain" priority/>
+                </div>
+                {/* PC用（sm以上で表示） */}
+                <div
+                    className="absolute z-20 w-[10%] h-[40%] flex items-end justify-start pointer-events-none hidden sm:flex"
                     style={{
                         top: '40%',
                         right: '10%',
                         transform: 'rotate(0deg)'
-                    }}>
+                    }}
+                >
                     <Image src="/images/main_visual/sousyoku_1.png" alt="装飾1" fill className="object-contain" priority/>
+                </div>
+                {/* スマホ用（sm未満で表示） */}
+                <div
+                    className="absolute z-20 w-[25%] h-[25%] flex items-end justify-start pointer-events-none flex sm:hidden"
+                    style={{
+                        top: '45%',
+                        right: '0%',
+                        transform: 'rotate(0deg)'
+                    }}
+                >
+                    <Image src="/images/main_visual/sousyoku_1.png" alt="装飾1" fill className="object-contain" priority/>
+                </div>
+                {/* 右下に縦書きで「scroll」と下に棒線 */}
+                <div className="absolute bottom-6 right-6 z-30 pointer-events-none flex flex-col items-center" style={{color:"#252525"}}>
+                    <span
+                        className="text-sm tracking-widest font-['Poppins-SemiBold']  select-none"
+                        style={{
+                            writingMode: 'vertical-rl',
+                            letterSpacing: '0.2em',
+                            fontSize: '20pt'
+                        }}
+                    >
+                        <span className="hidden md:inline" style={{ fontSize: '14pt' }}>scroll</span>
+                        <span className="md:hidden">scroll</span>
+                    </span>
+                    <span
+                        className="block mt-2"
+                        style={{
+                            width: '2px',
+                            height: '40px',
+                            borderRadius: '1px',
+                            backgroundColor: "#252525"
+                        }}
+                    ></span>
                 </div>
             </div>
 
@@ -158,138 +365,204 @@ export default function TopPage() {
             ourr service
             WHAT IS PACA!
             ============================================= */}
-            <div className="py-24 bg-[#f7f6f0] relative z-10">
+            <div className="py-12 sm:py-24 bg-[#f7f6f0] relative z-10">
                 <div className="container mx-auto flex flex-col items-center">
                     {/* タイトルエリア */}
                     <div className="flex flex-col items-center mb-10">
-                        <p className="text-base tracking-widest text-gray-500 mb-2 font-['Poppins-Medium']" style={{color: "#252525" ,fontSize: "18pt" }}>OUR SERVICES</p>
-                        <Image src="/images/text_title/tittle_1_X4.png" alt="tittle_1_X4"
-                            width={400}
-                            height={110}
-                            className="mx-auto mb-2"
-                            priority/>
-                        - - - - - -
+                        <p
+                            className="tracking-widest text-gray-500 mb-2 font-['Poppins-Medium']"
+                            style={{
+                                color: "#454545",
+                                fontSize: "16pt",
+                            }}
+                        >
+                            <span className="block sm:hidden" style={{ fontSize: "15pt" }}>OUR SERVICES</span>
+                            <span className="hidden sm:block" style={{ fontSize: "18pt" }}>OUR SERVICES</span>
+                        </p>
+                        <div className="w-[250px] h-[50px] sm:w-[400px] sm:h-[110px] mx-auto mb-2 relative">
+                            <Image
+                                src="/images/text_title/tittle_1_X4.png"
+                                alt="tittle_1_X4"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
+                        <span className="hidden sm:block text-xl" style={{ letterSpacing: "0.2em" ,    color: "#454545",}}>- - - - - -</span>
+                        <span className="block sm:hidden" style={{ fontSize: "15pt",    color: "#454545", }}>- - - - - -</span>
                     </div>
 
                     {/* サービス説明エリア */}
-                    <div className="max-w-2xl text-center mx-auto">
-                        <h2 className="text-1xl md:text-3xl font-bold mb-6 text-gray-800 leading-relaxed  font-['Poppins-SemiBold']" style={{color:"#252525", fontSize: "25px"}}>
-                            A More Meaningful Way to Experience Japan
+                    <div className="w-[80%] text-center mx-auto">
+                        <h2
+                            className="font-['Poppins-SemiBold']  mx-auto text-center flex justify-center"
+                            style={{
+                                fontSize: '25pt',
+                                color: "#252525",
+                            }}
+                        >
+                            <span className="block sm:hidden" style={{ fontSize: '15pt' }}>
+                                A More Meaningful Way to Experience Japan
+                            </span>
+                            <span className="hidden sm:flex items-center justify-center whitespace-nowrap w-full">
+                                A More Meaningful Way to Experience Japan
+                            </span>
                         </h2>
                         <div className="text-left">
-                            <div className="space-y-8 my-10  font-['Poppins-Medium']" style={{fontSize:"18pt", color:"#454545"}}>
-                                <p className="text-base md:text-lg text-gray-700 leading-loose whitespace-pre-line">
+                            <div
+                                className="space-y-8 my-10 font-['Poppins-Medium'] text-[15pt] sm:text-[18pt]  mx-auto"
+                                style={{ color: "#252525" }}
+                            >
+                                <p className="">
                                     paca! is a service designed to make your stay in Japan even more special.
                                 </p>
-                                <p className="text-base md:text-lg text-gray-700 leading-loose whitespace-pre-line">
+                                <p className="">
                                     We deliver handpicked local specialties—full of character and charm that are usually only available in specific regions of the country.
                                 </p>
-                                <p className="text-base md:text-lg text-gray-700 leading-loose whitespace-pre-line">
+                                <p className="">
                                     You simply pick up your box at your convenience, and enjoy it in the comfort of your room.
                                 </p>
-                                <p className="text-base md:text-lg text-gray-700 leading-loose whitespace-pre-line">
+                                <p className="">
                                     Together, let’s explore the hidden gems of Japan—regional treasures that even many locals have yet to discover.
                                 </p>
-                                <p className="text-base md:text-lg text-gray-700 leading-loose whitespace-pre-line">
+                                <p className="">
                                     paca! offers you a deeper connection to Japanese culture, filled with the spirit of omotenashi—Japan’s unique sense of heartfelt hospitality.
                                 </p>
                             </div>
                         </div>
-                        <div className="absolute z-20 flex items-end justify-start pointer-events-none"
-                            style={{
-                                top: '12%',
-                                right: '5%',
-                                transform: 'translate(-50%, -50%)'
-                            }}>
-                            <Image src="/images/about/sousyoku_5.png" alt="装飾5"
-                                width={180}
-                                height={60}
-                                priority/>
-                        </div>
-                        <div className="absolute z-20  flex items-end justify-start pointer-events-none"
-                            style={{
-                                top: '20%',
-                                left: '10%'
-                            }}>
-                            <Image src="/images/about/sousyoku_7.png" alt="装飾5"
-                                width={200}
-                                height={100}
-                                className="mx-auto mb-2"
-                                priority/>
-                        </div>
-                        <div className="absolute z-20 flex items-end justify-start pointer-events-none"
-                            style={{
-                                bottom: '30%',
-                                right: '15%',
-                                transform: 'rotate(200deg)'
-                            }}>
-                            <Image src="/images/about/sousyoku_6.png" alt="装飾6"
-                                width={140}
-                                height={70}
-                                className="mx-auto mb-2"
-                                priority/>
-                        </div>
-                        <div className="absolute z-20 w-[25%] h-[30%] flex items-end justify-start pointer-events-none"
-                            style={{
-                                bottom: '-20%',
-                                right: '0',
-                                transform: 'rotate(200deg)'
-                            }}>
-                            <Image src="/images/about/sousyoku_8.png" alt="装飾8"
-                                width={140}
-                                height={70}
-                                className="mx-auto mb-2"
-                                priority/>
-                        </div>
+                     
 
-                        {/* 「詳しく見る」ボタン */}
-              
-                        <div className="mt-30 text-center w-full">
-                            <Link href="/top">
-                            <Image
-                                src="/images/button/try_usingpaca.jpg"
-                                alt="try_usingpaca"
-                                width={640}
-                                height={50}
-                                className="mx-auto mb-2 rounded-md shadow cursor-pointer"
-                                priority
-                            />
-                            </Link>
-                        </div>
-                            
+     
                     </div>
                 </div>
+
+                <div
+                    className="
+                        absolute z-20 flex items-end justify-start pointer-events-none
+                        sm:top-[12%] sm:right-[5%] sm:translate-x-[-50%] sm:translate-y-[-50%]
+                        top-[0%] right-[0%]
+                    "
+                >
+                    <Image
+                        src="/images/about/sousyoku_5.png"
+                        alt="装飾5"
+                        width={110}
+                        height={110}
+                        priority
+                        className="sm:w-[180px] sm:h-[120px] w-[110px] h-[80px]"
+                    />
+                </div>
+                <div
+                    className={`
+                        absolute z-20 flex items-end justify-start pointer-events-none
+                        sm:top-[20%] sm:left-[10%]
+                        top-[13%] left-[-3%]
+                    `}
+                >
+                    <Image
+                        src="/images/about/sousyoku_7.png"
+                        alt="装飾5"
+                        width={200}
+                        height={200}
+                        className="mx-auto mb-2 sm:w-[250px] sm:h-[250px] w-[110px] h-[110px]"
+                        priority
+                    />
+                </div>
+                {/* 装飾6：スマホ画面では非表示 */}
+                <div
+                    className="absolute z-20 flex items-end justify-start pointer-events-none hidden sm:flex"
+                    style={{
+                        bottom: '30%',
+                        right: '15%',
+                        transform: 'rotate(200deg)',
+                    }}
+                >
+                    <Image
+                        src="/images/about/sousyoku_6.png"
+                        alt="装飾6"
+                        width={140}
+                        height={70}
+                        className="mx-auto mb-2"
+                        priority
+                    />
+                </div>
+                {/* 装飾8：スマホ画面では非表示 */}
+                <div
+                    className="absolute z-20 w-[25%] h-[30%] flex items-end justify-start pointer-events-none hidden sm:flex"
+                    style={{
+                        bottom: '-20%',
+                        right: '0',
+                        transform: 'rotate(200deg)',
+                    }}
+                >
+                    <Image
+                        src="/images/about/sousyoku_8.png"
+                        alt="装飾8"
+                        width={140}
+                        height={70}
+                        className="mx-auto mb-2"
+                        priority
+                    />
+                </div>
+
+                                   {/* 「詳しく見る」ボタン */}
+              
+                <div className="mt-15 sm:mt-30 text-center w-[80%] mx-auto">
+                    <Link href="/top">
+                        <Image
+                            src="/images/button/try_usingpaca.jpg"
+                            alt="try_usingpaca"
+                            width={700}
+                            height={450} // 高さを広くしました
+                            className="mx-auto mb-2 rounded-md shadow cursor-pointer"
+                            priority
+                        />
+                    </Link>
+                </div>
+                            
             </div>
 
             {/* =============================================
             Do you have any of the following problems?
             SITUATIONS
             ============================================= */}
-            <div className="relative w-full min-h-[400px] bg-[#f7f6f0] bg-cover bg-top bg-no-repeat pb-30"
-                style={{
-                    backgroundImage: "url('/images/background/background_2.png')"
-                }}>
-                <div className="container mx-auto pt-80 px-4">
+            <div
+                className="
+                    relative w-full min-h-[400px] pt-60 sm:pt-80 bg-[#f7f6f0] bg-cover bg-top bg-no-repeat pb-30
+                    bg-[url('/images/background/sp_background_1.png')]
+                    sm:bg-[url('/images/background/background_2.png')]
+                "
+            >
+                <div className=" mx-auto px-4">
                     {/* タイトルエリア */}
-                    <div className="text-center mb-16">
-                        <p className="text-base tracking-widest text-gray-500 mb-2 font-['Poppins-Medium']" style={{fontSize:"18pt", color:"#454545"}}>
-                            Do you have any of the following problems?
+                    <div className="flex flex-col items-center mb-10">
+                        <p
+                            className="tracking-widest text-gray-500 mb-2 font-['Poppins-Medium'] text-center"
+                            style={{
+                                color: "#454545",
+                                fontSize: "16pt",
+                            }}
+                        >
+                            <span className="block sm:hidden" style={{ fontSize: "9pt" }}>Do you have any of the following problems?</span>
+                            <span className="hidden sm:block" style={{ fontSize: "18pt" }}>Do you have any of the following problems?</span>
                         </p>
-                        <Image 
-                            src="/images/text_title/tittle_2_X4.png" 
-                            alt="tittle_2_X4"
-                            width={450}
-                            height={150}
-                            className="mx-auto mb-4"
-                            priority
-                        />
-                        - - - - - -
+                        <div className="w-[250px] h-[50px] sm:w-[400px] sm:h-[110px] mx-auto mb-2 relative">
+                            <Image
+                                src="/images/text_title/tittle_2_X4.png"
+                                alt="tittle_1_X4"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
+                        </div>
+                        <span className="hidden sm:block text-xl" style={{ letterSpacing: "0.2em" ,    color: "#454545",}}>- - - - - -</span>
+                        <span className="block sm:hidden" style={{ fontSize: "15pt",    color: "#454545", }}>- - - - - -</span>
                     </div>
 
                     {/* ケーススタディ */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto">  
-                        <div className="flex flex-col items-center gap-6 w-[450px] mx-auto mb-4">
-                            <div className="relative w-full h-[350px]">
+                        <div className="flex flex-col items-center gap-6 w-[90vw] max-w-[450px] mx-auto mb-4">
+                            <div className="relative w-full h-[300px] sm:h-[350px]">
                                 <Image 
                                     src="/images/problem/pc_text_nayami_01.png" 
                                     alt="tittle_2_X4"
@@ -307,14 +580,17 @@ export default function TopPage() {
                                         height: '100%',
                                     }}
                                 >
-                                    <p className="font-['Poppins-Medium'] w-[80%]" style={{ fontSize: "16pt" }}>
+                                    <p
+                                        className="font-['Poppins-Medium'] w-[90%] sm:w-[80%] text-[12pt] sm:text-[16pt]"
+                                        style={{ lineHeight: "1.5" }}
+                                    >
                                         "Third time in Japan.<br />
                                         Sushi? Check. Kimono? Done.<br />
                                         Now I wanna see the real Japan—like the kind only locals know."
                                     </p>
                                 </div>
                             </div>
-                            <div className="relative w-full h-[250px]">
+                            <div className="relative w-full h-[200px] sm:h-[250px]">
                                 <Image 
                                     src="/images/problem/nayami_01_X2.png" 
                                     alt="悩み画像1"
@@ -324,8 +600,8 @@ export default function TopPage() {
                                 />
                             </div>
                         </div>
-                        <div className="flex flex-col items-center gap-6 w-[450px] mx-auto mb-4">
-                            <div className="relative w-full h-[350px]">
+                        <div className="flex flex-col items-center gap-6 w-[90vw] max-w-[450px] mx-auto mb-4">
+                            <div className="relative w-full h-[300px] sm:h-[350px]">
                                 <Image 
                                     src="/images/problem/pc_text_nayami_02.png" 
                                     alt="pc_text_nayami_02"
@@ -343,13 +619,13 @@ export default function TopPage() {
                                         height: '100%',
                                     }}
                                 >
-                                    <p className="font-['Poppins-Medium'] w-[80%]" style={{ fontSize: "16pt" }}>
+                                    <p className="font-['Poppins-Medium'] w-[90%] sm:w-[80%] text-[12pt] sm:text-[16pt]" style={{  lineHeight: "1.5", }}>
                                         "Was dying to do a sake/shochu/whisky tasting in Japan...<br />
                                         Didn’t know they’re made in totally different regions! "
                                     </p>
                                 </div>
                             </div>
-                            <div className="relative w-full h-[250px]">
+                            <div className="relative w-full h-[200px] sm:h-[250px]">
                                 <Image 
                                     src="/images/problem/nayami_02_X2.png" 
                                     alt="nayami_02_X2"
@@ -360,8 +636,8 @@ export default function TopPage() {
                                 />
                             </div>
                         </div>
-                        <div className="flex flex-col items-center gap-6 w-[450px] mx-auto mb-4">
-                            <div className="relative w-full h-[350px]">
+                        <div className="flex flex-col items-center gap-6 w-[90vw] max-w-[450px] mx-auto mb-4">
+                            <div className="relative w-full h-[300px] sm:h-[350px]">
                                 <Image 
                                     src="/images/problem/pc_text_nayami_03.png" 
                                     alt="pc_text_nayami_03"
@@ -379,13 +655,13 @@ export default function TopPage() {
                                         height: '100%',
                                     }}
                                 >
-                                    <p className="font-['Poppins-Medium'] w-[80%]" style={{ fontSize: "16pt" }}>
+                                    <p className="font-['Poppins-Medium'] w-[90%] sm:w-[80%] text-[12pt] sm:text-[16pt]" style={{ lineHeight: "1.5", }}>
                                         "Every time I see the Ramen store there's a huge line...<br />
                                         But wait—Hotel + the Ramen at my time, no line, no problem!? "
                                     </p>
                                 </div>
                             </div>
-                            <div className="relative w-full h-[250px]">
+                            <div className="relative w-full h-[200px] sm:h-[250px]">
                                 <Image 
                                     src="/images/problem/nayami_01_X2.png" 
                                     alt="悩み画像1"
@@ -403,7 +679,7 @@ export default function TopPage() {
             {/* =============================================
             solution
             ============================================= */}
-            <div className="relative -top-10 w-full  pt-25 rounded-4xl bg-white">
+            {/* <div className="relative -top-10 w-full  pt-25 rounded-4xl bg-white">
                 <div className="flex justify-center items-end gap-4">
                     <Image 
                         src="/images/text_title/tittle_paca_X4.png" 
@@ -421,7 +697,7 @@ export default function TopPage() {
                 <div className='text-center mb-15'>- - - - - -</div>
                
 
-                {/* 装飾画像 */}
+       
                 <div className="absolute z-20 w-[45%] h-[45%] flex items-end justify-start pointer-events-none"
                     style={{
                         top: '0%',
@@ -439,9 +715,9 @@ export default function TopPage() {
                     />
                 </div>
 
-                {/* ソリューション表示エリア */}
+          
                 <div className="relative w-full">
-                    {/* 前のソリューションへ移動するボタン */}
+              
                     {selectedIdx > 0 && (
                         <button
                             onClick={() => setSelectedIdx(selectedIdx - 1)}
@@ -455,7 +731,7 @@ export default function TopPage() {
                         </button>
                     )}
 
-                    {/* 左側のソリューション（1/3表示） */}
+              
                     {selectedIdx > 0 && (
                         <div 
                             className="absolute left-0 top-1/2 -translate-y-1/2   w-[700px] h-[700px]  z-10"
@@ -474,7 +750,7 @@ export default function TopPage() {
                                 </div>
                                 <div className="p-4 overflow-y-auto">
                                     <h4 className="font-bold text-xl my-2">{solutions[selectedIdx - 1].title}</h4>
-                                    {/* descriptionが配列の場合に対応 */}
+                                
                                     {solutions[selectedIdx - 1].description.map((desc: string, i: number) => (
                                         <p
                                             key={i}
@@ -488,7 +764,7 @@ export default function TopPage() {
                         </div>
                     )}
 
-                    {/* メインソリューション */}
+            
                     <div className="relative bg-white rounded-lg w-[700px] h-[700px] mx-auto text-left mb-6 z-20 overflow-hidden">
                         <div className="relative w-full h-[60%]">
                             <Image
@@ -499,9 +775,9 @@ export default function TopPage() {
                                 priority
                             />
                         </div>
-                        <div className=" overflow-y-auto" style={{ fontSize:"20pt" , color:"#252525"}}> {/* 変更点 */}
+                        <div className=" overflow-y-auto" style={{ fontSize:"20pt" , color:"#252525"}}> 
                             <h3 className="font-bold text-2xl my-6 font-['poppins-SemiBold']" style={{ fontSize:"20pt" }}>{solutions[selectedIdx].title}</h3>
-                            {/* descriptionが配列の場合に対応 */}
+                         
                             {solutions[selectedIdx].description.map((desc: string, i: number) => (
                                         <p
                                             key={i}
@@ -514,7 +790,7 @@ export default function TopPage() {
                         </div>
                     </div>
 
-                    {/* 右側のソリューション（1/3表示） */}
+       
                     {selectedIdx < solutions.length - 1 && (
                         <div 
                             className="absolute right-0 top-1/2 -translate-y-1/2  w-[700px] h-[700px]   z-10"
@@ -531,7 +807,7 @@ export default function TopPage() {
                                         priority
                                     />
                                 </div>
-                                <div className="p-4 min-h-[30%] overflow-y-auto"> {/* 変更点 */}
+                                <div className="p-4 min-h-[30%] overflow-y-auto"> 
                                     <h4 className="font-bold text-xl mb-2">{solutions[selectedIdx + 1].title}</h4>
                                     {solutions[selectedIdx + 1].description.map((desc: string, i: number) => (
                                         <p
@@ -546,7 +822,7 @@ export default function TopPage() {
                         </div>
                     )}
 
-                    {/* 次のソリューションへ移動するボタン */}
+                
                     {selectedIdx < solutions.length - 1 && (
                         <button
                             onClick={() => setSelectedIdx(selectedIdx + 1)}
@@ -561,8 +837,7 @@ export default function TopPage() {
                     )}
                 </div>
 
-                {/* インジケーター */}
-                {/* ゲージ表示 */}
+  
                 <div className="flex justify-center items-center mt-8 w-full">
                     <div className="relative w-[600px] max-w-full h-3 bg-gray-200 rounded-full overflow-hidden">
                         <div
@@ -574,7 +849,7 @@ export default function TopPage() {
                         />
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* =============================================
             Introducing 4steps to paca!
