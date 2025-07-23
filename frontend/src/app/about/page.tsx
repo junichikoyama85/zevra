@@ -5,6 +5,7 @@ import HomeHeader from "@/components/HomeHeader";
 import HomeFooter from "@/components/HomeFooter";
 import { useMswReady } from '../../../hooks/useMswReady';
 import { useEffect, useState } from 'react';
+import PacaButton from "@/components/PacaButton"
 
 // 商品データの型（必要に応じて調整）
 type News = {
@@ -241,18 +242,13 @@ export default function AboutPage() {
                         priority/>
                     - - - - - -
 
-                    <div className="flex justify-center mt-15">
-                      <Link href="/contact">
-                        <Image
-                          src="/images/button/contact.png"
-                          alt="contact_btn"
-                          width={640}
-                          height={50}
-                          className="mx-auto mb-2 rounded-md shadow cursor-pointer"
-                          priority
-                        />
-                      </Link>
-                    </div>
+                    {/* 「詳しく見る」ボタン */}
+                    <PacaButton
+                        label="CONTACT"
+                        href="/contact"
+                        backgroundColor="#000000"
+                        className=""
+                    />
                 </div>
 
             </div>
