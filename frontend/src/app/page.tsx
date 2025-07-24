@@ -37,13 +37,12 @@ export default function TopPage() {
     const [selectedIdx, setSelectedIdx] = useState(0); // 初期値を0に設定
     const [popup, setPopup] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
 
         window.scrollTo(0, 0);
         const timer = setTimeout(() => {
             setPopup(true);
-      
-            
+
             const mainBg = document.getElementById('main-bg');
             const mainBgSm = document.getElementById('main-bg-sm');
             if (mainBg) {
@@ -95,14 +94,14 @@ export default function TopPage() {
                     className="object-cover"
                     priority
                   />
-                </div>
+      </div>
                 {/* スマホ用背景画像 */}
                 <div id="main-bg-sm" className="block sm:hidden w-full h-full absolute">
-                  <Image
+                <Image
                     src="/images/main_visual/sp_back_mv.png"
                     alt="sp_back_mv"
-                    fill
-                    className="object-cover"
+                  fill
+                  className="object-cover"
                     priority
                   />
                 </div>
@@ -787,8 +786,8 @@ export default function TopPage() {
                         className="mx-auto mb-2"
                         style={{ transform: 'scaleX(-1)' }}
                         priority
-                    />
-                </div>
+                />
+              </div>
 
           
                 {/* スマホ対応：レスポンシブなカルーセル風ソリューション表示 */}
@@ -819,7 +818,7 @@ export default function TopPage() {
                             <svg width="32" height="32" viewBox="0 0 28 28" fill="none" >
                                 <path d="M10 14h6M14 10l4 4" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="" />
                             </svg>
-                        </button>
+                </button>
                     )}
 
                     {/* 前のソリューション（PC/タブレットのみ表示） */}
@@ -877,7 +876,7 @@ export default function TopPage() {
                                 </p>
                             ))}
                         </div>
-                    </div>
+              </div>
 
                     {/* 次のソリューション（PC/タブレットのみ表示） */}
                     {selectedIdx < solutions.length - 1 && (
@@ -895,7 +894,7 @@ export default function TopPage() {
                                         className="object-cover w-full h-full rounded-3xl" 
                                         priority
                                     />
-                                </div>
+          </div>
                                 <div className="p-4 min-h-[30%] overflow-y-auto"> 
                                     <h4 className="font-bold text-xl mb-2">{solutions[selectedIdx + 1].title}</h4>
                                     {solutions[selectedIdx + 1].description.map((desc: string, i: number) => (
@@ -905,9 +904,9 @@ export default function TopPage() {
                                         >
                                             {desc}
                                         </p>
-                                    ))}
-                                </div>
-                            </div>
+        ))}
+      </div>
+    </div>
                         </div>
                     )}
 

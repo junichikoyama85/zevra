@@ -152,9 +152,6 @@ const MainVisualAnimation: React.FC = () => {
           height={220}
           className="object-contain"
           priority
-        //   style={{
-        //     transform: "rotate(-70deg)"
-        //   }}
         />
       </div>
 
@@ -174,9 +171,7 @@ const MainVisualAnimation: React.FC = () => {
           height={450}
           className="object-contain"
           priority
-        //   style={{
-        //     transform: "rotate(-70deg)"
-        //   }}
+
         />
       </div>
 
