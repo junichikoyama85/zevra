@@ -191,11 +191,10 @@ body {
   }
 }
 
-#main-bg {
+#main-bg, #main-bg-sm {
   transform: scale(1.2);
   opacity: 0;
 }
-
 
 
 .animate-scale-down {

@@ -46,7 +46,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani6_X2.png'}
+          src='/images/main_animation/pc/pc_ani6_X2.png'
           alt="Paca Main Visual"
           width={400}
           height={400}
@@ -68,7 +68,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani3_X2.png'}
+          src='/images/main_animation/pc/pc_ani3_X2.png'
           alt="Paca Main Visual"
           width={500}
           height={500}
@@ -86,7 +86,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani5_X2.png'}
+          src='/images/main_animation/pc/pc_ani5_X2.png'
           alt="Paca Main Visual"
           width={360}
           height={360}
@@ -105,7 +105,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani5_X2.png'}
+          src='/images/main_animation/pc/pc_ani5_X2.png'
           alt="Paca Main Visual"
           width={440}
           height={440}
@@ -124,7 +124,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani4_X2.png'}
+          src='/images/main_animation/pc/pc_ani4_X2.png'
           alt="Paca Main Visual"
           width={440}
           height={440}
@@ -146,7 +146,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani9_X2.png'}
+          src='/images/main_animation/pc/pc_ani9_X2.png'
           alt="Paca Main Visual"
           width={220}
           height={220}
@@ -168,7 +168,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani8_X2.png'}
+          src='/images/main_animation/pc/pc_ani8_X2.png'
           alt="Paca Main Visual"
           width={450}
           height={450}
@@ -190,7 +190,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani3_X2.png'}
+          src='/images/main_animation/pc/pc_ani3_X2.png'
           alt="Paca Main Visual"
           width={600}
           height={600}
@@ -212,7 +212,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani4_X2.png'}
+          src='/images/main_animation/pc/pc_ani4_X2.png'
           alt="Paca Main Visual"
           width={600}
           height={600}
@@ -234,7 +234,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani5_X2.png'}
+          src='/images/main_animation/pc/pc_ani5_X2.png'
           alt="Paca Main Visual"
           width={350}
           height={350}
@@ -256,7 +256,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani5_X2.png'}
+          src='/images/main_animation/pc/pc_ani5_X2.png'
           alt="Paca Main Visual"
           width={450}
           height={450}
@@ -278,7 +278,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani8_X2.png'}
+          src='/images/main_animation/pc/pc_ani8_X2.png'
           alt="Paca Main Visual"
           width={450}
           height={450}
@@ -300,7 +300,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani4_X2.png'}
+          src='/images/main_animation/pc/pc_ani4_X2.png'
           alt="Paca Main Visual"
           width={450}
           height={450}
@@ -322,7 +322,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani2_X2.png'}
+          src='/images/main_animation/pc/pc_ani2_X2.png'
           alt="Paca Main Visual"
           width={300}
           height={300}
@@ -344,7 +344,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani6_X2.png'}
+          src='/images/main_animation/pc/pc_ani6_X2.png'
           alt="Paca Main Visual"
           width={300}
           height={300}
@@ -366,7 +366,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani4_X2.png'}
+          src='/images/main_animation/pc/pc_ani4_X2.png'
           alt="Paca Main Visual"
           width={400}
           height={400}
@@ -388,7 +388,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani3_X2.png'}
+          src='/images/main_animation/pc/pc_ani3_X2.png'
           alt="Paca Main Visual"
           width={400}
           height={400}
@@ -410,7 +410,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani6_X2.png'}
+          src='/images/main_animation/pc/pc_ani6_X2.png'
           alt="Paca Main Visual"
           width={400}
           height={400}
@@ -432,7 +432,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani6_X2.png'}
+          src='/images/main_animation/pc/pc_ani6_X2.png'
           alt="Paca Main Visual"
           width={250}
           height={250}
@@ -455,7 +455,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani4_X2.png'}
+          src='/images/main_animation/pc/pc_ani4_X2.png'
           alt="Paca Main Visual"
           width={500}
           height={500}
@@ -477,7 +477,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani2_X2.png'}
+          src='/images/main_animation/pc/pc_ani2_X2.png'
           alt="Paca Main Visual"
           width={500}
           height={500}
@@ -499,7 +499,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani5_X2.png'}
+          src='/images/main_animation/pc/pc_ani5_X2.png'
           alt="Paca Main Visual"
           width={500}
           height={500}
@@ -522,7 +522,7 @@ const MainVisualAnimation: React.FC = () => {
         }}
       >
         <Image
-          src={'/images/main_animation/pc/pc_ani3_X2.png'}
+          src='/images/main_animation/pc/pc_ani3_X2.png'
           alt="Paca Main Visual"
           width={500}
           height={500}

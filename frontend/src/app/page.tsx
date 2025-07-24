@@ -38,13 +38,21 @@ export default function TopPage() {
     const [popup, setPopup] = useState(false);
 
     useEffect(() => {
+
+        window.scrollTo(0, 0);
         const timer = setTimeout(() => {
             setPopup(true);
-            // document.getElementById('main-bg')がnullの場合があるため、nullチェックを追加するのが正しいです
+      
+            
             const mainBg = document.getElementById('main-bg');
+            const mainBgSm = document.getElementById('main-bg-sm');
             if (mainBg) {
                 mainBg.classList.add('animate-scale-down');
             }
+            if (mainBgSm) {
+                mainBgSm.classList.add('animate-scale-down');
+            }
+
             const mainVisualImgElements = document.querySelectorAll('.main-visiual-img');
             // TypeScriptの型エラーを回避するため、ElementをHTMLElementにアサーションします
             mainVisualImgElements.forEach((el) => {
@@ -72,13 +80,11 @@ export default function TopPage() {
  
     return (
         <>
-            <HomeHeader/>
+           {popup && <HomeHeader />}
             <MainVisualAnimation />
             {/* =============================================
             main
             ============================================= */}
-        
-
             <div className={`relative w-full h-screen`} style={{backgroundColor:"#f8f7f1"}}>
                 {/* PC用背景画像 */}
                 <div id="main-bg" className="hidden sm:block w-full h-full absolute inset-0 ">
@@ -91,7 +97,7 @@ export default function TopPage() {
                   />
                 </div>
                 {/* スマホ用背景画像 */}
-                <div id="main-bg" className="block sm:hidden w-full h-full absolute inset-0">
+                <div id="main-bg-sm" className="block sm:hidden w-full h-full absolute">
                   <Image
                     src="/images/main_visual/sp_back_mv.png"
                     alt="sp_back_mv"
@@ -105,7 +111,7 @@ export default function TopPage() {
                 */}
                 {/* メインのタイトル */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center z-100">
-                    <p className={`bg-opacity-70 px-4 font-['Poppins-SemiBold'] text-center ${popup ? 'animate-popup' : ''}`} style={{color:"#454545"}}>
+                    <p className={`bg-opacity-70 px-4 font-['Poppins-SemiBold'] text-center ${popup ? 'animate-popup' : ''}`} style={{transform: 'scale(0)', color:"#454545"}}>
                         <span className="text-[13pt] md:text-[17pt] block sm:inline">
                             The whole&nbsp;&quot;Made in JAPAN&quot;
                         </span>
@@ -375,6 +381,7 @@ export default function TopPage() {
                 </div>
 
                 {/* 右下に縦書きで「scroll」と下に棒線 */}
+                {popup && 
                 <div className="absolute bottom-6 right-6 z-30 pointer-events-none flex flex-col items-center" style={{ color: "#252525" }}>
                     <span
                         className="text-sm tracking-widest font-['Poppins-SemiBold'] select-none"
@@ -398,7 +405,8 @@ export default function TopPage() {
                             backgroundColor: "#252525"
                         }}
                     ></span>
-                </div>
+                </div>}
+               
             </div>
 
             {/* =============================================
