@@ -8,7 +8,7 @@ export default function HomeHeader() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="fixed top-0 w-full z-50">
+        <header className="fixed top-0 w-full z-100">
             <div className="w-[90%] mx-auto flex justify-between items-center py-4">
                 {/* ロゴ */}
                 <Link href="/" className="relative w-28 h-14 sm:w-40 sm:h-20 flex items-center justify-center">
@@ -244,18 +244,16 @@ export default function HomeHeader() {
                                     className="inline-block"/>
                             </a>
                         </div>
+                        <p className="font-['Poppins-Regular'] px-4 mb-15"
+                            style={
+                                {
+                                    color: '#252525',
+                                    fontSize: "12pt"
+                                }
+                        }>
+                            Zevra, Inc.
+                        </p>
 
-                    
-                            <p className="font-['Poppins-Regular'] px-4 mb-15"
-                                style={
-                                    {
-                                        color: '#252525',
-                                        fontSize: "12pt"
-                                    }
-                            }>
-                                Zevra, Inc.
-                            </p>
-                        
                     </div>
                 )
             } </div>

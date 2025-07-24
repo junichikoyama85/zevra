@@ -1,10 +1,11 @@
 "use client"
-import Link from 'next/link';
+// import Link from 'next/link';
 import HomeHeader from "@/components/HomeHeader";
 import HomeFooter from "@/components/HomeFooter";
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PacaButton from '@/components/PacaButton';
+import MainVisualAnimation from '@/components/MainVisualAnimation';
 
 const solutions = [
     {
@@ -34,33 +35,77 @@ const solutions = [
 
 export default function TopPage() {
     const [selectedIdx, setSelectedIdx] = useState(0); // 初期値を0に設定
+    const [popup, setPopup] = useState(false);
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setPopup(true);
+            // document.getElementById('main-bg')がnullの場合があるため、nullチェックを追加するのが正しいです
+            const mainBg = document.getElementById('main-bg');
+            if (mainBg) {
+                mainBg.classList.add('animate-scale-down');
+            }
+            const mainVisualImgElements = document.querySelectorAll('.main-visiual-img');
+            // TypeScriptの型エラーを回避するため、ElementをHTMLElementにアサーションします
+            mainVisualImgElements.forEach((el) => {
+                const htmlEl = el as HTMLElement;
+                htmlEl.style.opacity = '1';
+                htmlEl.classList.add('animate-popup');
+                
+                setTimeout(() => {
+                    htmlEl.classList.remove('animate-popup');
+                    // 3つのアニメーションクラスからランダムで1つを選んで追加
+                    const animationClasses = [
+                        'animate-spin-move-fast',
+                        'animate-spin-move',
+                        'animate-spin-move-slow'
+                    ];
+                    const randomIdx = Math.floor(Math.random() * animationClasses.length);
+                    htmlEl.classList.add(animationClasses[randomIdx]);
+                }, 1000);
+            });
+        }, 5000);
+        return () => clearTimeout(timer);
+    }, []);
+
+
+ 
     return (
         <>
             <HomeHeader/>
+            <MainVisualAnimation />
             {/* =============================================
             main
             ============================================= */}
-            <div className="relative w-full h-screen" style={{backgroundColor:"#f8f7f1"}}>
+        
+
+            <div className={`relative w-full h-screen`} style={{backgroundColor:"#f8f7f1"}}>
                 {/* PC用背景画像 */}
-                <Image
-                  src="/images/main_visual/back_mv.png"
-                  alt="back_mv"
-                  fill
-                  className="object-cover hidden sm:block"
-                  priority
-                />
+                <div id="main-bg" className="hidden sm:block w-full h-full absolute inset-0 ">
+                  <Image
+                    src="/images/main_visual/back_mv.png"
+                    alt="back_mv"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
                 {/* スマホ用背景画像 */}
-                <Image
-                  src="/images/main_visual/sp_back_mv.png"
-                  alt="sp_back_mv"
-                  fill
-                  className="object-cover block sm:hidden"
-                  priority
-                />
+                <div id="main-bg" className="block sm:hidden w-full h-full absolute inset-0">
+                  <Image
+                    src="/images/main_visual/sp_back_mv.png"
+                    alt="sp_back_mv"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+                {/* アニメーション用CSSはglobals.css等に以下を追加してください
+          
+                */}
                 {/* メインのタイトル */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-                    <p className="bg-opacity-70 px-4 font-['Poppins-SemiBold'] text-center" style={{color:"#454545"}}>
+                <div className="absolute inset-0 flex flex-col items-center justify-center z-100">
+                    <p className={`bg-opacity-70 px-4 font-['Poppins-SemiBold'] text-center ${popup ? 'animate-popup' : ''}`} style={{color:"#454545"}}>
                         <span className="text-[13pt] md:text-[17pt] block sm:inline">
                             The whole&nbsp;&quot;Made in JAPAN&quot;
                         </span>
@@ -71,6 +116,7 @@ export default function TopPage() {
                     <div
                         className="
                             relative
+                            z-100
                             w-[15rem] h-[6rem]
                             sm:w-[24rem] sm:h-[11rem]
                             md:w-[33rem] md:h-[15rem]
@@ -86,48 +132,25 @@ export default function TopPage() {
                         />
                     </div>
                 </div>
-                {/* PC（sm以上）の場合は右側中央、スマホ（sm未満）の場合は上部中央に配置 */}
-                <div>
+
                   {/* PC用配置 */}
-                  <div className="absolute right-[15%] top-1/2 transform -translate-y-1/2 z-10 w-[17%] h-1/2 flex items-center justify-start pointer-events-none hidden sm:flex">
+                  <div
+                    className={`main-visiual-img
+                      absolute right-[15%] top-1/2 transform -translate-y-1/2 z-10 w-[17%] h-1/2
+                      flex items-center justify-start pointer-events-none hidden sm:flex  
+                    `}
+                  >
                     <Image src="/images/main_visual/_paca_mv_1.png" alt="_paca_mv_1" fill className="object-contain" priority/>
                   </div>
-                  {/* スマホ用配置 */}
-                  <div className="absolute right-0 top-[15%] transform -translate-x-1/2 z-10 w-[35vw] h-[35vw] flex items-start justify-center pointer-events-none sm:hidden">
-                    <Image src="/images/main_visual/_paca_mv_1.png" alt="_paca_mv_1" fill className="object-contain" priority/>
-                  </div>
-                </div>
-                <div
-                  className="absolute left-1/2 z-10 w-[18%] h-1/3 flex items-start justify-center pointer-events-none hidden sm:flex"
-                  style={{
-                    top: '60%',
-                    left: '40%',
-                    transform: 'rotate(-20deg)'
-                  }}
-                >
-                  <Image src="/images/main_visual/_paca_mv_2.png" alt="_paca_mv_2" fill className="object-contain" priority />
-                </div>
-                {/* PC（sm以上）の場合は左上、スマホ（sm未満）の場合は下部中央に配置 */}
-                {/* PC用配置 */}
-                <div className="absolute z-10 w-[30%] h-1/2 flex items-start justify-end pointer-events-none hidden sm:flex"
+                  <div className="main-visiual-img absolute z-10 w-[30%] h-1/2 flex items-start justify-end pointer-events-none hidden sm:flex"
                     style={{
                         top: '15%',
                         left: '7%'
                     }}>
                     <Image src="/images/main_visual/_paca_mv_3.png" alt="_paca_mv_3" fill className="object-contain" priority/>
                 </div>
-                {/* スマホ用配置 */}
-                <div className="absolute z-10 w-[50vw] h-[50vw] flex items-end justify-center pointer-events-none sm:hidden"
-                    style={{
-                        bottom: '10%',
-                        left: '41%',
-                        transform: 'translateX(-50%)'
-                    }}>
-                    <Image src="/images/main_visual/_paca_mv_3.png" alt="_paca_mv_3" fill className="object-contain" priority/>
-                </div>
-                {/* PC（sm以上）用配置 */}
                 <div
-                  className="absolute z-10 w-[18%] h-1/3 flex items-start justify-end pointer-events-none hidden sm:flex"
+                  className="main-visiual-img absolute z-10 w-[18%] h-1/3 flex items-start justify-end pointer-events-none hidden sm:flex"
                   style={{
                     top: '15%',
                     left: '5%',
@@ -136,22 +159,9 @@ export default function TopPage() {
                 >
                   <Image src="/images/main_visual/sousyoku_3.png" alt="sousyoku_3.png" fill className="object-contain" priority />
                 </div>
-                {/* スマホ（sm未満）用配置：大きく表示 */}
+
                 <div
-                  className="absolute z-10 w-[30vw] h-[30vw] flex items-start justify-end pointer-events-none sm:hidden"
-                  style={{
-                    top: '25%',
-                    left: '0%',
-                    transform: 'rotate(-10deg)'
-                  }}
-                >
-                  <Image src="/images/main_visual/sousyoku_3.png" alt="sousyoku_3.png" fill className="object-contain" priority />
-                </div>
-                {/* PC（sm以上）は元の位置、スマホ（sm未満）は左側に配置 */}
-                <div>
-                  {/* PC用配置 */}
-                  <div
-                    className="absolute z-10 w-[9%] h-[12%] flex items-start justify-end pointer-events-none hidden sm:flex"
+                    className="main-visiual-img absolute z-10 w-[9%] h-[12%] flex items-start justify-end pointer-events-none hidden sm:flex"
                     style={{
                       top: '66%',
                       left: '33%',
@@ -160,9 +170,8 @@ export default function TopPage() {
                   >
                     <Image src="/images/main_visual/dango.png" alt="団子" fill className="object-contain" priority />
                   </div>
-                  {/* スマホ用配置（左寄せ） */}
                   <div
-                    className="absolute z-10 w-[18vw] h-[18vw] flex items-start justify-start pointer-events-none sm:hidden"
+                    className="main-visiual-img absolute z-10 w-[18vw] h-[18vw] flex items-start justify-start pointer-events-none sm:hidden"
                     style={{
                       top: '40%',
                       left: '0%',
@@ -171,10 +180,9 @@ export default function TopPage() {
                   >
                     <Image src="/images/main_visual/dango.png" alt="団子" fill className="object-contain" priority />
                   </div>
-                </div>
-                {/* PC用配置（sm以上） */}
-                <div
-                  className="absolute z-10 w-[9%] h-[12%] flex items-start justify-end pointer-events-none hidden sm:flex"
+
+                  <div
+                  className="main-visiual-img absolute z-10 w-[9%] h-[12%] flex items-start justify-end pointer-events-none hidden sm:flex"
                   style={{
                     top: '75%',
                     left: '28%',
@@ -183,20 +191,8 @@ export default function TopPage() {
                 >
                   <Image src="/images/main_visual/kyusu.png" alt="急須" fill className="object-contain" priority />
                 </div>
-                {/* スマホ用配置（位置を変更） */}
                 <div
-                  className="absolute z-10 w-[18vw] h-[18vw] flex items-start justify-start pointer-events-none sm:hidden"
-                  style={{
-                    top: '60%',
-                    right: '25%',
-                    transform: 'rotate(-20deg)'
-                  }}
-                >
-                  <Image src="/images/main_visual/kyusu.png" alt="急須" fill className="object-contain" priority />
-                </div>
-                {/* PC用配置（sm以上） */}
-                <div
-                  className="absolute z-20 w-[10%] h-[13%] flex items-center justify-center pointer-events-none hidden sm:flex"
+                  className="main-visiual-img absolute z-20 w-[10%] h-[13%] flex items-center justify-center pointer-events-none hidden sm:flex"
                   style={{
                     top: '10%',
                     left: '30%',
@@ -204,19 +200,9 @@ export default function TopPage() {
                 >
                   <Image src="/images/main_visual/sennsu.png" alt="扇子" fill className="object-contain" priority />
                 </div>
-                {/* スマホ用配置（位置を変更） */}
+
                 <div
-                  className="absolute z-20 w-[18vw] h-[18vw] flex items-center justify-center pointer-events-none sm:hidden"
-                  style={{
-                    top: '15%',
-                    left: '20%',
-                  }}
-                >
-                  <Image src="/images/main_visual/sennsu.png" alt="扇子" fill className="object-contain" priority />
-                </div>
-                {/* PC用配置（sm以上） */}
-                <div
-                  className="absolute z-20 w-[10%] h-[13%] flex items-center justify-center pointer-events-none hidden sm:flex"
+                  className="main-visiual-img absolute z-20 w-[10%] h-[13%] flex items-center justify-center pointer-events-none hidden sm:flex"
                   style={{
                     top: '15%',
                     left: '38%',
@@ -225,20 +211,8 @@ export default function TopPage() {
                 >
                   <Image src="/images/main_visual/daruma.png" alt="達磨" fill className="object-contain" priority />
                 </div>
-                {/* スマホ用配置（位置を調整） */}
                 <div
-                  className="absolute z-20 w-[15vw] h-[15vw] flex items-center justify-center pointer-events-none sm:hidden"
-                  style={{
-                    top: '25%',
-                    left: '33%',
-                    transform: 'rotate(20deg)'
-                  }}
-                >
-                  <Image src="/images/main_visual/daruma.png" alt="達磨" fill className="object-contain" priority />
-                </div>
-                {/* PC用（sm以上で表示） */}
-                <div
-                  className="absolute z-20 w-[18%] h-[20%] flex items-center justify-center pointer-events-none hidden sm:flex"
+                  className="main-visiual-img absolute z-20 w-[18%] h-[20%] flex items-center justify-center pointer-events-none hidden sm:flex"
                   style={{
                     top: '14%',
                     left: '52%',
@@ -247,20 +221,8 @@ export default function TopPage() {
                 >
                   <Image src="/images/main_visual/sousyoku_2.png" alt="sousyoku_2" fill className="object-contain" priority />
                 </div>
-                {/* スマホ用（sm未満で表示、位置を変更） */}
                 <div
-                  className="absolute z-20 w-[30vw] h-[20vw] flex items-center justify-center pointer-events-none sm:hidden"
-                  style={{
-                    top: '28%',
-                    right: '0%',
-                    transform: 'rotate(-10deg)'
-                  }}
-                >
-                  <Image src="/images/main_visual/sousyoku_2.png" alt="sousyoku_2" fill className="object-contain" priority />
-                </div>
-                {/* PC用（sm以上で表示） */}
-                <div
-                    className="absolute z-20 w-[24%] h-[33%] flex items-start justify-end pointer-events-none font-['Poppins-Bold'] hidden sm:flex"
+                    className="main-visiual-img absolute z-20 w-[24%] h-[33%] flex items-start justify-end pointer-events-none font-['Poppins-Bold'] hidden sm:flex"
                     style={{
                         top: '62%',
                         left: '8%',
@@ -268,27 +230,9 @@ export default function TopPage() {
                     }}>
                     <Image src="/images/main_visual/sousyoku_4.png" alt="sousyoku_4" fill className="object-contain" priority/>
                 </div>
-                {/* スマホ用（sm未満で表示、位置を変更） */}
-                <div
-                    className="absolute z-20 w-[33vw] h-[33vw] flex items-end justify-center pointer-events-none font-['Poppins-Bold'] sm:hidden"
-                    style={{
-                        bottom: '20%',
-                        left: '-5%',
-                        transform: 'rotate(200deg)'
-                    }}>
-                    <Image src="/images/main_visual/sousyoku_4.png" alt="sousyoku_4" fill className="object-contain" priority/>
-                </div>
-                <div className="absolute z-20 w-[9%] h-[12%] flex items-end justify-start pointer-events-none hidden sm:flex"
-                    style={{
-                        top: '65%',
-                        left: '53%',
-                    }}>
-                    <Image src="/images/main_visual/tokkuri.png" alt="徳利" fill className="object-contain" priority/>
-                </div>
-                {/* PC画面とスマホ画面で位置を切り替える */}
-                {/* PC用（sm以上で表示） */}
                 <div
                     className="
+                        main-visiual-img
                         absolute z-20
                         hidden sm:flex
                         w-[9%] h-[9%]
@@ -301,9 +245,91 @@ export default function TopPage() {
                     }}>
                     <Image src="/images/main_visual/kani.png" alt="蟹" fill className="object-contain" priority/>
                 </div>
-                {/* スマホ用（sm未満で表示） */}
+                <div
+                    className="main-visiual-img absolute z-20 w-[10%] h-[40%] flex items-end justify-start pointer-events-none hidden sm:flex"
+                    style={{
+                        top: '40%',
+                        right: '10%',
+                        transform: 'rotate(0deg)'
+                    }}
+                >
+                    <Image src="/images/main_visual/sousyoku_1.png" alt="装飾1" fill className="object-contain" priority/>
+                </div>
+                  {/* スマホ用配置 */}
+                  <div className="main-visiual-img absolute right-0 top-[15%] transform -translate-x-1/2 z-10 w-[35vw] h-[35vw] flex items-start justify-center pointer-events-none sm:hidden">
+                    <Image src="/images/main_visual/_paca_mv_1.png" alt="_paca_mv_1" fill className="object-contain" priority/>
+                  </div>
+                  <div className="main-visiual-img absolute z-10 w-[50vw] h-[50vw] flex items-end justify-center pointer-events-none sm:hidden"
+                    style={{
+                        bottom: '13%',
+                        left: '10%',
+                        transform: 'translate(-50%, -50%)'
+                    }}>
+                    <Image src="/images/main_visual/_paca_mv_3.png" alt="_paca_mv_3" fill className="object-contain" priority/>
+                </div>
+                <div
+                  className="main-visiual-img absolute z-10 w-[30vw] h-[30vw] flex items-start justify-end pointer-events-none sm:hidden"
+                  style={{
+                    top: '25%',
+                    left: '0%',
+                    transform: 'rotate(-10deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/sousyoku_3.png" alt="sousyoku_3.png" fill className="object-contain" priority />
+                </div>
+                <div
+                  className="main-visiual-img absolute z-10 w-[18vw] h-[18vw] flex items-start justify-start pointer-events-none sm:hidden"
+                  style={{
+                    top: '60%',
+                    right: '25%',
+                    transform: 'rotate(-20deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/kyusu.png" alt="急須" fill className="object-contain" priority />
+                </div>
+
+                <div
+                  className="main-visiual-img absolute z-20 w-[18vw] h-[18vw] flex items-center justify-center pointer-events-none sm:hidden"
+                  style={{
+                    top: '15%',
+                    left: '20%',
+                  }}
+                >
+                  <Image src="/images/main_visual/sennsu.png" alt="扇子" fill className="object-contain" priority />
+                </div>
+
+                <div
+                  className="main-visiual-img absolute z-20 w-[15vw] h-[15vw] flex items-center justify-center pointer-events-none sm:hidden"
+                  style={{
+                    top: '25%',
+                    left: '33%',
+                    transform: 'rotate(20deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/daruma.png" alt="達磨" fill className="object-contain" priority />
+                </div>
+                <div
+                  className="main-visiual-img absolute z-20 w-[30vw] h-[20vw] flex items-center justify-center pointer-events-none sm:hidden"
+                  style={{
+                    top: '28%',
+                    right: '0%',
+                    transform: 'rotate(-10deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/sousyoku_2.png" alt="sousyoku_2" fill className="object-contain" priority />
+                </div>
+                <div
+                    className="main-visiual-img absolute z-20 w-[33vw] h-[33vw] flex items-end justify-center pointer-events-none font-['Poppins-Bold'] sm:hidden"
+                    style={{
+                        bottom: '20%',
+                        left: '-5%',
+                        transform: 'rotate(200deg)'
+                    }}>
+                    <Image src="/images/main_visual/sousyoku_4.png" alt="sousyoku_4" fill className="object-contain" priority/>
+                </div>
                 <div
                     className="
+                        main-visiual-img
                         absolute z-20
                         flex sm:hidden
                         w-[18%] h-[18%]
@@ -316,20 +342,9 @@ export default function TopPage() {
                     }}>
                     <Image src="/images/main_visual/kani.png" alt="蟹" fill className="object-contain" priority/>
                 </div>
-                {/* PC用（sm以上で表示） */}
+
                 <div
-                    className="absolute z-20 w-[10%] h-[40%] flex items-end justify-start pointer-events-none hidden sm:flex"
-                    style={{
-                        top: '40%',
-                        right: '10%',
-                        transform: 'rotate(0deg)'
-                    }}
-                >
-                    <Image src="/images/main_visual/sousyoku_1.png" alt="装飾1" fill className="object-contain" priority/>
-                </div>
-                {/* スマホ用（sm未満で表示） */}
-                <div
-                    className="absolute z-20 w-[25%] h-[25%] flex items-end justify-start pointer-events-none flex sm:hidden"
+                    className="main-visiual-img absolute z-20 w-[25%] h-[25%] flex items-end justify-start pointer-events-none flex sm:hidden"
                     style={{
                         top: '45%',
                         right: '0%',
@@ -338,6 +353,27 @@ export default function TopPage() {
                 >
                     <Image src="/images/main_visual/sousyoku_1.png" alt="装飾1" fill className="object-contain" priority/>
                 </div>
+                  {/* 共通 */}
+                <div
+                  className="main-visiual-img absolute left-1/2 z-10 w-[18%] h-1/3 flex items-start justify-center pointer-events-none hidden sm:flex"
+                  style={{
+                    top: '60%',
+                    left: '40%',
+                    transform: 'rotate(-20deg)'
+                  }}
+                >
+                  <Image src="/images/main_visual/_paca_mv_2.png" alt="_paca_mv_2" fill className="object-contain" priority />
+                </div>
+
+     
+                <div className="main-visiual-img absolute z-20 w-[9%] h-[12%] flex items-end justify-start pointer-events-none hidden sm:flex"
+                    style={{
+                        top: '65%',
+                        left: '53%',
+                    }}>
+                    <Image src="/images/main_visual/tokkuri.png" alt="徳利" fill className="object-contain" priority/>
+                </div>
+
                 {/* 右下に縦書きで「scroll」と下に棒線 */}
                 <div className="absolute bottom-6 right-6 z-30 pointer-events-none flex flex-col items-center" style={{ color: "#252525" }}>
                     <span

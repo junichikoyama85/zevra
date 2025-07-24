@@ -87,3 +87,143 @@ body {
 body {
   font-family: 'NotoSansCJKjp-Regular', sans-serif;
 }
+
+@keyframes moveFadeLU {
+  to {
+    transform: translate(-200%, -200%);
+    /* opacity: 0; */
+  }
+}
+
+@keyframes moveFadeRU {
+  to {
+    transform: translate(200%, -200%);
+    /* opacity: 0; */
+  }
+}
+
+@keyframes moveFadeLD {
+  to {
+    transform: translate(-150%, 150%);
+    /* opacity: 0; */
+  }
+}
+
+@keyframes moveFadeRD {
+  to {
+    transform: translate(200%, 200%);
+    /* opacity: 0; */
+  }
+}
+
+.animate-lu { animation: moveFadeLU 4s ease-out forwards; }
+.animate-ru { animation: moveFadeRU 4s ease-out forwards; }
+.animate-ld { animation: moveFadeLD 4s ease-out forwards; }
+.animate-rd { animation: moveFadeRD 4s ease-out forwards; }
+
+
+/* 回転アニメーションのバリエーションを時間ごとに複数用意 */
+
+@keyframes Spin-slow {
+  0% {
+    transform: rotateZ(0deg) translateX(0px);
+  }
+  50% {
+    transform: rotateZ(8deg) translateX(1.5px);
+  }
+  100% {
+    transform: rotateZ(0deg) translateX(0px);
+  }
+}
+
+@keyframes Spin-normal {
+  0% {
+    transform: rotateZ(0deg) translateX(0px);
+  }
+  50% {
+    transform: rotateZ(8deg) translateX(1.5px);
+  }
+  100% {
+    transform: rotateZ(0deg) translateX(0px);
+  }
+}
+
+@keyframes Spin-fast {
+  0% {
+    transform: rotateZ(0deg) translateX(0px);
+  }
+  50% {
+    transform: rotateZ(8deg) translateX(1.5px);
+  }
+  100% {
+    transform: rotateZ(0deg) translateX(0px);
+  }
+}
+
+/* アニメーション速度ごとにクラスを分けて管理 */
+.animate-spin-move-slow {
+  animation: Spin-slow 5s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.animate-spin-move {
+  animation: Spin-normal 3s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.animate-spin-move-fast {
+  animation: Spin-fast 1.5s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+#main-bg {
+  transform: scale(1.2);
+  opacity: 0;
+}
+
+
+
+.animate-scale-down {
+  animation: scaleDown 1.2s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+/* ポップアップアニメーション */
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-popup {
+  animation: popup 2s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+
+.main-visiual-img {
+  /* transform: scale(0) ; */
+  opacity: 0;
+}
