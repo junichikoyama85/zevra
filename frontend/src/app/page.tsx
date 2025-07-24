@@ -39,7 +39,7 @@ export default function TopPage() {
 
   useEffect(() => {
 
-        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        window.scrollTo(0, 0);
         const timer = setTimeout(() => {
             setPopup(true);
 
@@ -1221,11 +1221,11 @@ export default function TopPage() {
 
                 <div className="block sm:hidden">
                     <Image
-                        src="/images/map/_map_only.png"
+                        src="/images/map/map_number_X2.png"
                         alt="_map"
-                        width={1920}
-                        height={330}
-                        className="w-[80%] mx-auto h-auto mb-2"
+                        width={2000}
+                        height={2000}
+                        className="w-[100%] mb-10"
                         priority
                     />
 
