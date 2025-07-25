@@ -42,16 +42,17 @@ const MainVisualAnimation: React.FC = () => {
           top: "0%",
           left: "0%",
           zIndex: 3,
+          height:"100vh",
+          width: "100vw",
           transform: "translate(-50%, -50%)"
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani6_X2.png'
           alt="Paca Main Visual"
-          width={400}
-          height={400}
           className="object-contain"
           priority
+          fill
           style={{
             transform: "rotate(180deg)"
           }}
@@ -65,13 +66,14 @@ const MainVisualAnimation: React.FC = () => {
           left: "0%",
           transform: "translate(-50%, -50%)",
           zIndex: 2,
+          height:"100vh",
+          width: "100vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani3_X2.png'
           alt="Paca Main Visual"
-          width={500}
-          height={500}
+          fill
           className="object-contain"
           priority/>
       </div>
@@ -79,17 +81,18 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute ${isAnimating ? 'animate-ld' : ''}`}
         style={{
-          left: '-5%',
-          bottom: '-10%',
+          left: '0%',
+          bottom: '0%',
           zIndex: 2,
-        //   transform: "translate(-50%, -50%)"
+          height:"100vh",
+          width: "100vw",
+          transform: "translate(-50%, 50%)"
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani5_X2.png'
           alt="Paca Main Visual"
-          width={360}
-          height={360}
+          fill
           className="object-contain"
           priority
         />
@@ -98,17 +101,18 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute  ${isAnimating ? 'animate-lu' : ''}`}
         style={{
-          left: '10%',
-          top: '0',
+          left: '20%',
+          top: '5%',
           zIndex: 0,
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani5_X2.png'
           alt="Paca Main Visual"
-          width={440}
-          height={440}
+          fill
           className="object-contain"
           priority
         />
@@ -119,15 +123,16 @@ const MainVisualAnimation: React.FC = () => {
         style={{
           left: '20%',
           top: '50%',
-          zIndex: 0,
-          transform: "translate(-50%, -50%)"
+          zIndex: 1,
+          transform: "translate(-50%, -50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani4_X2.png'
           alt="Paca Main Visual"
-          width={440}
-          height={440}
+         fill
           className="object-contain"
           priority
           style={{
@@ -142,14 +147,15 @@ const MainVisualAnimation: React.FC = () => {
           left: '17%',
           bottom: '-3%',
           zIndex: 2,
-          transform: "translate(-50%)"
+          transform: "translate(-50%)",
+          height:"30vh",
+          width: "30vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani9_X2.png'
           alt="Paca Main Visual"
-          width={220}
-          height={220}
+          fill
           className="object-contain"
           priority
         />
@@ -158,17 +164,18 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute  ${isAnimating ? 'animate-lu' : ''}`}
         style={{
-          left: '13%',
+          left: '35%',
           top: '17%',
           zIndex: 2,
-          transform: "translate(0%, -50%)"
+          transform: "translate(-50%, -50%)",
+          height:"50vh",
+          width: "50vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani8_X2.png'
           alt="Paca Main Visual"
-          width={450}
-          height={450}
+          fill
           className="object-contain"
           priority
 
@@ -178,17 +185,18 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute ${isAnimating ? 'animate-ld' : ''}`}
         style={{
-          left: '37%',
-          bottom: '0%',
+          left: '30%',
+          bottom: '5%',
           zIndex: 2,
-          transform: "translate(-50%, 50%)"
+          transform: "translate(-50%, 50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani3_X2.png'
           alt="Paca Main Visual"
-          width={600}
-          height={600}
+          fill
           className="object-contain"
           priority
           style={{
@@ -201,16 +209,17 @@ const MainVisualAnimation: React.FC = () => {
         className={`absolute ${isAnimating ? 'animate-ru' : ''}`}
         style={{
           left: '50%',
-          top: '0%',
+          top: '8%',
           zIndex: 1,
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
+          height:"80vh",
+          width: "80vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani4_X2.png'
           alt="Paca Main Visual"
-          width={600}
-          height={600}
+          fill
           className="object-contain"
           priority
           style={{
@@ -222,17 +231,18 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute ${isAnimating ? 'animate-lu' : ''}`}
         style={{
-          left: '37%',
-          top: '45%',
+          left: '35%',
+          top: '52%',
           zIndex: 1,
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
+          height:"60vh",
+          width: "60vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani5_X2.png'
           alt="Paca Main Visual"
-          width={350}
-          height={350}
+         fill
           className="object-contain"
           priority
           style={{
@@ -247,14 +257,15 @@ const MainVisualAnimation: React.FC = () => {
           left: '45%',
           bottom: '15%',
           zIndex: 2,
-          transform: "translate(-50%, 50%)"
+          transform: "translate(-50%, 50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani5_X2.png'
           alt="Paca Main Visual"
-          width={450}
-          height={450}
+          fill
           className="object-contain"
           priority
           style={{
@@ -269,14 +280,15 @@ const MainVisualAnimation: React.FC = () => {
           left: '55%',
           bottom: '15%',
           zIndex: 3,
-          transform: "translate(-50%, 50%)"
+          transform: "translate(-50%, 50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani8_X2.png'
           alt="Paca Main Visual"
-          width={450}
-          height={450}
+          fill
           className="object-contain"
           priority
           style={{
@@ -291,14 +303,15 @@ const MainVisualAnimation: React.FC = () => {
           left: '50%',
           top: '50%',
           zIndex: 3,
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
+          height:"50vh",
+          width: "50vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani4_X2.png'
           alt="Paca Main Visual"
-          width={450}
-          height={450}
+          fill
           className="object-contain"
           priority
           style={{
@@ -310,17 +323,18 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute  ${isAnimating ? 'animate-ru' : ''}`}
         style={{
-          left: '65%',
-          top: '0%',
+          left: '60%',
+          top: '5%',
           zIndex: 2,
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani2_X2.png'
           alt="Paca Main Visual"
-          width={300}
-          height={300}
+          fill
           className="object-contain"
           priority
           style={{
@@ -332,17 +346,18 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute  ${isAnimating ? 'animate-ru' : ''}`}
         style={{
-          left: '63%',
-          top: '25%',
-          zIndex: 1,
-          transform: "translate(-50%, -50%)"
+          left: '60%',
+          top: '30%',
+          zIndex: 2,
+          transform: "translate(-50%, -50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani6_X2.png'
           alt="Paca Main Visual"
-          width={300}
-          height={300}
+          fill
           className="object-contain"
           priority
           style={{
@@ -357,14 +372,15 @@ const MainVisualAnimation: React.FC = () => {
           left: '63%',
           top: '75%',
           zIndex: 5,
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani4_X2.png'
           alt="Paca Main Visual"
-          width={400}
-          height={400}
+          fill
           className="object-contain"
           priority
           style={{
@@ -376,22 +392,20 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute  ${isAnimating ? 'animate-ru' : ''}`}
         style={{
-          left: '67%',
+          left: '65%',
           top: '30%',
           zIndex: 5,
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani3_X2.png'
           alt="Paca Main Visual"
-          width={400}
-          height={400}
+          fill
           className="object-contain"
           priority
-        //   style={{
-        //     transform: "rotate(110deg)"
-        //   }}
         />
       </div>
 
@@ -401,14 +415,15 @@ const MainVisualAnimation: React.FC = () => {
           left: '75%',
           top: '90%',
           zIndex: 5,
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani6_X2.png'
           alt="Paca Main Visual"
-          width={400}
-          height={400}
+          fill
           className="object-contain"
           priority
           style={{
@@ -423,14 +438,15 @@ const MainVisualAnimation: React.FC = () => {
           left: '80%',
           top: '5%',
           zIndex: 4,
-          transform: "translate(-50%, -50%)"
+          transform: "translate(-50%, -50%)",
+          height:"50vh",
+          width: "50vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani6_X2.png'
           alt="Paca Main Visual"
-          width={250}
-          height={250}
+          fill
           className="object-contain"
           priority
           style={{
@@ -443,17 +459,18 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute ${isAnimating ? 'animate-ru' : ''}`}
         style={{
-          right: '15%',
+          right: '10%',
           top: '20%',
           zIndex: 3,
-          transform: "translate(50%, -50%)"
+          transform: "translate(50%, -50%)",
+          height:"80vh",
+          width: "80vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani4_X2.png'
           alt="Paca Main Visual"
-          width={500}
-          height={500}
+          fill
           className="object-contain"
           priority
           style={{
@@ -466,16 +483,17 @@ const MainVisualAnimation: React.FC = () => {
         className={`absolute  ${isAnimating ? 'animate-rd' : ''}`}
         style={{
           right: '10%',
-          bottom: '10%',
+          bottom: '15%',
           zIndex: 5,
-          transform: "translate(50%, 50%)"
+          transform: "translate(50%, 50%)",
+          height:"80vh",
+          width: "80vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani2_X2.png'
           alt="Paca Main Visual"
-          width={500}
-          height={500}
+         fill
           className="object-contain"
           priority
           style={{
@@ -487,17 +505,18 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute ${isAnimating ? 'animate-rd' : ''}`}
         style={{
-          right: '10%',
+          right: '15%',
           bottom: '50%',
           zIndex: 2,
-          transform: "translate(50%, 50%)"
+          transform: "translate(50%, 50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani5_X2.png'
           alt="Paca Main Visual"
-          width={500}
-          height={500}
+          fill
           className="object-contain"
           priority
           style={{
@@ -510,17 +529,18 @@ const MainVisualAnimation: React.FC = () => {
       <div
         className={`absolute ${isAnimating ? 'animate-ru' : ''}`}
         style={{
-          right: '7%',
-          bottom: '50%',
+          right: '10%',
+          bottom: '40%',
           zIndex: 2,
-          transform: "translate(50%, 50%)"
+          transform: "translate(50%, 50%)",
+          height:"70vh",
+          width: "70vw",
         }}
       >
         <Image
           src='/images/main_animation/pc/pc_ani3_X2.png'
           alt="Paca Main Visual"
-          width={500}
-          height={500}
+          fill
           className="object-contain"
           priority
           style={{

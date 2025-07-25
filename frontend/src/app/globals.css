@@ -191,11 +191,11 @@ body {
   }
 }
 
+
 #main-bg, #main-bg-sm {
   transform: scale(1.2);
   opacity: 0;
 }
-
 
 .animate-scale-down {
   animation: scaleDown 1.2s cubic-bezier(0.4,0,0.2,1) forwards;

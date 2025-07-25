@@ -38,11 +38,9 @@ export default function TopPage() {
     const [popup, setPopup] = useState(false);
 
   useEffect(() => {
-
         window.scrollTo(0, 0);
-        const timer = setTimeout(() => {
-            setPopup(true);
 
+        setTimeout(() => {
             const mainBg = document.getElementById('main-bg');
             const mainBgSm = document.getElementById('main-bg-sm');
             if (mainBg) {
@@ -51,6 +49,13 @@ export default function TopPage() {
             if (mainBgSm) {
                 mainBgSm.classList.add('animate-scale-down');
             }
+        }, 4000)
+
+
+        const timer = setTimeout(() => {
+            
+            setPopup(true);
+      
 
             const mainVisualImgElements = document.querySelectorAll('.main-visiual-img');
             // TypeScriptの型エラーを回避するため、ElementをHTMLElementにアサーションします
